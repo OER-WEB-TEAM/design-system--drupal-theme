@@ -1,0 +1,8 @@
+// Sub theme styling.
+@import '__nihod._variables_drupal';
+
+// Styleguide __nihod customizations
+@import '__nihod._variables_bootstrap';
+
+// Include bootstrap.
+@import '../../../themes/bootstrap5/scss/style';

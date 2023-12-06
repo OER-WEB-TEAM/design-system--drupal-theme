@@ -1,0 +1,166 @@
+// *
+// *
+// INPUTS
+form[novalidate] label:has(.field-error),
+label:has([data-jsvalidate="error"]) {
+  border: 0;
+  border-left: 3px solid var(--bs-danger);
+  padding-left: 1em;
+  font-weight: bold;
+}
+
+[data-jsvalidate="success"] {
+  box-shadow: 0 0 0 .25em var(--bs-success);
+}
+
+[data-jsvalidate="error"] {
+  box-shadow: none;
+}
+
+
+// BOOTSTRAP GENERALS
+$enable-dark-mode: false !default;
+$prefix: "bs-";
+
+
+// *
+// *
+// OUT-OF-THE-BOX OVERRIDES
+$form-text-margin-top: 0;
+$legend-font-size: 1rem;
+
+
+// *
+// *
+// FONTS
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+$font-family-sans-serif: "Open Sans", sans-serif;
+
+
+// *
+// *
+// COLORS
+$white: #fff;
+$gray-100: #F0F0F0;
+$gray-200: #D6D7D7;
+$gray-300: #BCBDBE;
+$gray-400: #A2A4A5;
+$gray-500: #898B8D;
+$gray-600: #6F7174;
+$gray-700: #55585B;
+$gray-800: #3B3E42;
+$gray-900: #212529;
+$black: #000;
+
+$blue: #20558A;
+$indigo: #6610f2;
+$purple: #853A51;
+$pink: #d63384;
+$red: #C91B1B;
+$orange: #fd7e14;
+$yellow: #FFC321;
+$green: #49A261;
+$teal: #20c997;
+$cyan: #49A0E0;
+
+$primary: $blue;
+$secondary: $purple;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-900;
+
+
+// *
+// *
+// SPACING CLASSES
+$border-width: 1px;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
+  6: 6px,
+  7: 7px,
+  8: 8px
+);
+
+
+// *
+// *
+// ACCORDION
+$accordion-button-icon: url("https://designsystem.digital.gov/assets/img/usa-icons/add.svg");
+$accordion-button-active-icon: url("https://designsystem.digital.gov/assets/img/usa-icons/remove.svg");
+$accordion-border-width: 0;
+
+
+// *
+// *
+// ALERT
+$alert-color-scale: 0;
+$alert-border-scale: 0;
+$alert-border-width: 0;
+
+
+// *
+// *
+// BREADCRUMBS
+$breadcrumb-divider-color: #71767A;
+$breadcrumb-divider: quote(">");
+
+
+// *
+// *
+// CARD
+$card-spacer-y: 1.4rem;
+$card-spacer-x: 1.4rem;
+
+
+// *
+// *
+// MODAL
+$modal-fade-transform: scale(.8);
+
+
+// *
+// *
+// NAVBAR
+$nav-link-padding-y: .25rem;
+
+
+// *
+// *
+// INPUTS
+$input-border-radius: 0;
+$input-border-radius-sm: 0;
+$input-border-radius-lg: 0;
+$input-border-color: $black;
+$input-focus-box-shadow: 0 0 0 .25em $info;
+
+
+// *
+// *
+// CHECKBOX
+$form-check-input-border-radius: .15em;
+$form-check-input-border: 1px solid rgba($black, .50);
+$form-check-input-checked-border-color: rgba(0, 0, 0, .75);
+$form-check-margin-bottom: 0;
+
+
+// *
+// *
+// SELECT
+$form-select-focus-box-shadow: 0 0 0 .25em $info;
+
+
+// *
+// * 
+// TABLE
+$table-cell-padding-y: 1rem;
+$table-cell-padding-x: .75rem;
+$table-bg-scale: 0;
+$table-striped-bg-factor: .075;
+$table-striped-bg: rgba(var(--#{$prefix}emphasis-color-rgb), $table-striped-bg-factor);

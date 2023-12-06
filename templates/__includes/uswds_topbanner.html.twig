@@ -1,0 +1,82 @@
+<style>
+  #us-banner [aria-expanded="true"] + i:before {
+    content: "\F286";
+  }
+  #us-banner .container-fluid {
+    padding: 0 !important;
+  }
+</style>
+<small
+  id="us-banner"
+  class="px-3 px-lg-5 py-1 bg-light"
+  aria-label="Official government website"
+>
+  <div class="{{ b5_top_container }} d-flex justify-content-between flex-column-reverse flex-xl-row">
+    <div>
+      <img
+        src="/themes/nihod5/img/us_flag_small.png"
+        alt="US Flag Icon"
+        width="16"
+        height="11"
+      />
+      An official website of the United States government
+      <a
+        class="btn-link link-primary text-decoration-underline ms-2 collapsed"
+        data-bs-toggle="collapse"
+        href="#collapseUsaBanner"
+        data-label="Expand/Collapse USWDS Website Header"
+        role="button"
+        aria-expanded="false"
+        aria-controls="collapseUsaBanner"
+      >
+        Here's how you know
+      </a>
+      <i class="ms-2 bi bi-chevron-down"></i>
+    </div>
+    <div class="d-none d-md-block text-xl-end">
+      <a href="https://www.hhs.gov/" target="_blank"
+        >U.S. Department of Health and Human Services</a
+      >
+      |
+      <a href="https://www.nih.gov/" target="_blank"
+        >National Institutes of Health</a
+      >
+    </div>
+  </div>
+  <div class="{{ b5_top_container }} collapse" id="collapseUsaBanner">
+    <div class="row py-5">
+      <div class="col-12 col-md-4 d-flex align-items-start">
+        <img
+          class="me-3"
+          src="/themes/nihod5/img/icon-dot-gov.svg"
+          role="img"
+          alt=".GOV Icon"
+          aria-hidden="true"
+          style="width: 2.5rem"
+        />
+        <div>
+          <strong> Official websites use .gov </strong><br />
+          A <strong>.gov</strong> website belongs to an official government<br />
+          organization in the United States.
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mt-3 mt-md-0 col-4 d-flex align-items-start">
+        <img
+          class="me-3"
+          src="/themes/nihod5/img/icon-https.svg"
+          role="img"
+          alt="HTTPS Icon"
+          aria-hidden="true"
+          style="width: 2.5rem"
+        />
+        <div>
+          <strong> Secure .gov websites use HTTPS </strong><br />
+          A <strong>lock</strong> (&#128274;) or <strong>https://</strong> means
+          you've safely connected to the<br />
+          .gov website. Share sensitive information only on official,<br />
+          secure websites.
+        </div>
+      </div>
+    </div>
+  </div>
+</small>

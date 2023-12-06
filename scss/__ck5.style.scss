@@ -1,0 +1,20 @@
+/*
+  BUG  
+  
+  Do not use this to compile the stylesheet for the CkEditor
+  This prepends everything in the stylesheet with a ckeditor class
+
+  but some elements cannot be prepended:
+  - :root
+  - html, body
+
+  Doing so will lead to incorrect preview of the CkEditor
+
+  For the time being:
+  - compile this file
+  - copy paste style.css into __ck5.style.css
+  - adjust CSS accordingly (very time consuming)
+*/
+.ck-content {
+  @import './style.scss';
+}
