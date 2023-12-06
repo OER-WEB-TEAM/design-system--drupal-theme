@@ -1,6 +1,13 @@
-name: "NIH OD 5"
+name: "NIH OD 5.3.10"
 type: theme
-description: "NIH OD Styleguide Drupal theme. This is a subtheme of <a href='https://www.drupal.org/project/bootstrap5' target=''>Bootstrap5</a> base theme for Drupal."
+description: "NIH OD Styleguide Drupal theme.
+  <ul>
+    <li>Download and install <a href='https://www.drupal.org/project/bootstrap5' target=''>Bootstrap5</a> theme.</li>
+    <li>Install NIH OD theme (this theme) and set as default.</li>
+    <li>Optionally create subtheme based on this one.</li>
+  </ul>
+  <b>Creating a subtheme is highly recommended as it will prevent any updates from wiping your customizations.</b>
+"
 core_version_requirement: "^9.4 || ^10"
 "base theme": bootstrap5
 libraries:
