@@ -11,7 +11,7 @@ description: "NIH OD Styleguide Drupal theme.
 core_version_requirement: "^9.4 || ^10"
 "base theme": bootstrap5
 libraries:
-  - nihod5/global-styling
+  - nihod5/nihod5-styling
   - nihod5/bootstrapIcons
   # - nihod5/colorMode
 
