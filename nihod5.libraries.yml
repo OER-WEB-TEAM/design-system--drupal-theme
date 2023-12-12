@@ -2,10 +2,6 @@ global-styling:
   css:
     theme:
       css/style.css: {}  
-      # The above is not really needed, but it serves as backbone to prevent view glitch
-      # when changing loaded stylesheet on /theming page
-      css/style--NIHOD.css: { attributes: { id: "theme_stylesheet" } }
-      css/style-custom.css: {}
   js:
     js/scripts.js: {}
   dependencies:
