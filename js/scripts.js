@@ -137,4 +137,18 @@
     },
   };
 
+  Drupal.behaviors.anchorLink = {
+    attach: function (context) {
+      if (context.querySelector("article") == null) return;
+      // Produce an anchor icon for all the headings with class ".anchor"
+      once("helper__anchorLink", ".anchor", document.body).forEach((anchorElement) => {
+        let innerText = anchorElement.innerText;
+        let anchor = innerText.replace(/\s+/g, '-').toLowerCase();
+        anchorElement.setAttribute("id", anchor)
+
+        anchorElement.innerHTML += `<a href="#${anchor}">#</a>`;
+      });
+    },
+  };
+
 })(Drupal);

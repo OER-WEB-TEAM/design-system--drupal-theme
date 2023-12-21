@@ -1,23 +1,3 @@
-// *
-// *
-// INPUTS
-form[novalidate] label:has(.field-error),
-label:has([data-jsvalidate="error"]) {
-  border: 0;
-  border-left: 3px solid var(--bs-danger);
-  padding-left: 1em;
-  font-weight: bold;
-}
-
-[data-jsvalidate="success"] {
-  box-shadow: 0 0 0 .25em var(--bs-success);
-}
-
-[data-jsvalidate="error"] {
-  box-shadow: none;
-}
-
-
 // BOOTSTRAP GENERALS
 $enable-dark-mode: false !default;
 $prefix: "bs-";
@@ -92,8 +72,8 @@ $border-widths: (
 // *
 // *
 // ACCORDION
-$accordion-button-icon: url("https://designsystem.digital.gov/assets/img/usa-icons/add.svg");
-$accordion-button-active-icon: url("https://designsystem.digital.gov/assets/img/usa-icons/remove.svg");
+$accordion-button-icon: url("../img/accordion-add.svg");
+$accordion-button-active-icon: url("../img/accordion-remove.svg");
 $accordion-border-width: 0;
 
 

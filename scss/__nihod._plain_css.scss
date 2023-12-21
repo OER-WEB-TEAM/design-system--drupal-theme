@@ -1,0 +1,226 @@
+// *
+// *
+// INPUTS
+form[novalidate] label:has(.field-error),
+label:has([data-jsvalidate="error"]) {
+  border: 0;
+  border-left: 3px solid var(--bs-danger);
+  padding-left: 1em;
+  font-weight: bold;
+}
+
+[data-jsvalidate="success"] {
+  box-shadow: 0 0 0 .25em var(--bs-success);
+}
+
+[data-jsvalidate="error"] {
+  box-shadow: none;
+}
+
+
+// *
+// *
+// LINKS
+a[target="_blank"]:not(.site-logo):not(.btn):not(.d-block):not(.noicon)::after {
+  content: "\F1C5";
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  -webkit-font-smoothing: antialiased;
+  font-size: 0.7em;
+  margin-right: 3px;
+  transform: translate(3px, -4px);
+}
+
+.anchor:hover>a {
+  opacity: 1;
+}
+
+.anchor>a {
+  opacity: 0;
+  text-decoration: none;
+  margin-left: 0.25em;
+  color: var(--bs-info);
+}
+
+
+// *
+// *
+// LIST (ICON LISTS)
+ul.icon-list>li {
+  list-style-type: none;
+}
+
+ul.icon-list>li:before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  margin-right: 0.5em;
+  line-height: 1.6;
+  transform: translate(0, 2px);
+  font-size: var(--fs);
+}
+
+ul.icon-list.icon-2x {
+  --fs: 2em !important;
+}
+
+ul.icon-list.icon-3x {
+  --fs: 3em !important;
+}
+
+ul.icon-list.icon-absolute {
+  --fs: 1em;
+  position: relative;
+  padding-left: calc(var(--fs) + calc(var(--fs) / 2));
+}
+
+ul.icon-list.icon-absolute>li:before {
+  position: absolute;
+  left: 0;
+}
+
+ul.icon-list.icon-primary>li:before {
+  color: var(--bs-primary);
+}
+
+ul.icon-list.icon-secondary>li:before {
+  color: var(--bs-secondary);
+}
+
+ul.icon-list.icon-info>li:before {
+  color: var(--bs-info);
+}
+
+ul.icon-list.icon-success>li:before {
+  color: var(--bs-success);
+}
+
+ul.icon-list.icon-warning>li:before {
+  color: var(--bs-warning);
+}
+
+ul.icon-list.icon-danger>li:before {
+  color: var(--bs-danger);
+}
+
+ul.icon-list.icon-light>li:before {
+  color: var(--bs-light);
+}
+
+ul.icon-list.icon-dark>li:before {
+  color: var(--bs-dark);
+}
+
+ul.icon-list.il_checkcross>li:before {
+  content: "\F26A";
+}
+
+ul.icon-list.il_checkcross>li.not:before {
+  content: "\F622";
+}
+
+ul.icon-list.il_thumbupdown>li:before {
+  content: "\F406";
+}
+
+ul.icon-list.il_thumbupdown>li.not:before {
+  content: "\F404";
+}
+
+ul.icon-list.il_openclosed>li:before {
+  content: "\F33E";
+}
+
+ul.icon-list.il_openclosed>li.not:before {
+  content: "\F33F";
+}
+
+ul.icon-list.il_cloudupdown>li:before {
+  content: "\F296";
+}
+
+ul.icon-list.il_cloudupdown>li.not:before {
+  content: "\F294";
+}
+
+
+// *
+// *
+// LIST (PROCESS LISTS)
+.process-list {
+  list-style: none;
+  counter-reset: mybullets;
+  padding-left: 3em;
+  position: relative;
+  --orderedbulletsize: 28px;
+}
+
+.process-list>li:not(:last-child)::before,
+.process-list.pl-primary>li:not(:last-child)::before {
+  background: rgba(var(--bs-primary-rgb), .3);
+}
+
+.process-list.pl-seconadry>li:not(:last-child)::before {
+  background: rgba(var(--bs-seconadry-rgb), .3);
+}
+
+.process-list.pl-info>li:not(:last-child)::before {
+  background: rgba(var(--bs-info-rgb), .3);
+}
+
+.process-list.pl-success>li:not(:last-child)::before {
+  background: rgba(var(--bs-success-rgb), .3);
+}
+
+.process-list.pl-warning>li:not(:last-child)::before {
+  background: rgba(var(--bs-warning-rgb), .3);
+}
+
+.process-list.pl-danger>li:not(:last-child)::before {
+  background: rgba(var(--bs-danger-rgb), .3);
+}
+
+.process-list.pl-light>li:not(:last-child)::before {
+  background: rgba(var(--bs-warning-rgb), .3);
+}
+
+.process-list.pl-dark>li:not(:last-child)::before {
+  background: rgba(var(--bs-danger-rgb), .3);
+}
+
+.process-list>li {
+  counter-increment: mybullets;
+  position: relative;
+}
+
+.process-list>li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--orderedbulletsize) * -1 - 9px);
+  top: calc(var(--orderedbulletsize) + 4px);
+  width: 10px;
+  height: calc(100% - var(--orderedbulletsize) + 6px);
+}
+
+.process-list>li::after {
+  position: absolute;
+  text-align: center;
+  aspect-ratio: 1;
+  border: 2px solid currentcolor;
+  border-radius: 100%;
+  font-weight: bold;
+}
+
+ol.process-list>li::after {
+  content: counter(mybullets);
+  top: 0;
+  transform: translate(calc(-100% - var(--orderedbulletsize) * .65), -1px);
+  width: var(--orderedbulletsize);
+}
+
+ul.process-list>li::after {
+  content: "";
+  top: calc(var(--orderedbulletsize) / 4);
+  transform: translateX(calc(-100% - var(--orderedbulletsize) * .88));
+  width: calc(var(--orderedbulletsize) / 2);
+  background: #000;
+}
