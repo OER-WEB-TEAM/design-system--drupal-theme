@@ -1,0 +1,13 @@
+# .github/release.yml
+
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+    authors:
+      - octocat
+  categories:
+    - title: 💣 Potential Breaking Changes
+    - title: ✨ New Features & Improvements
+    - title: 🐛 Bug Fixes & Optimizations
+    - title: 🔧 Dependencies
