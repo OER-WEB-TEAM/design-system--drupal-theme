@@ -1,11 +1,8 @@
 // Sub theme styling.
-@import '__nihod._variables_drupal';
+@import 'variables_drupal';
 
-// Styleguide __nihod customizations
-@import '__nihod._variables_bootstrap';
+// Bootstrap overriden variables.
+@import 'variables_bootstrap';
 
 // Include bootstrap.
 @import '../../../themes/bootstrap5/scss/style';
-
-// Styleguide __nihod customization plain CSS
-@import '__nihod._plain_css.scss';
