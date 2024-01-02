@@ -4,7 +4,6 @@
 	<title>NIHOD5</title>
 	<short_name>NIHOD5</short_name>
 	<dc:creator>AlexVanK</dc:creator>
-	<supported_branches>1.2,1.1</supported_branches>
 	<type>project_theme</type>
 	<project_status>published</project_status>
 	<link>https://github.com/OER-WEB-TEAM/design-system--drupal-theme</link>
@@ -54,7 +53,6 @@
 				</term>
 			</terms>
 			<security>Alpha releases are not covered by Drupal security advisories.</security>
-			<core_compatibility>10.x</core_compatibility>
 		</release>
 		<release>
 			<name>NIHOD5 1.1.0</name>
@@ -87,7 +85,6 @@
 				</term>
 			</terms>
 			<security>Alpha releases are not covered by Drupal security advisories.</security>
-			<core_compatibility>10.x</core_compatibility>
 		</release>
 	</releases>
 </project>
