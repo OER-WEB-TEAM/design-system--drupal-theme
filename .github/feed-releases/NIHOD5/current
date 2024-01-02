@@ -4,7 +4,7 @@
 	<short_name>NIHOD5</short_name>
 	<dc:creator>AlexVanK</dc:creator>
 	<type>project_theme</type>
-	<supported_branches>1.2</supported_branches>
+	<supported_branches>1.1,1.1.x,1.2,1.2.x</supported_branches>
 	<project_status>published</project_status>
 	<link>https://github.com/OER-WEB-TEAM/design-system--drupal-theme</link>
 	<terms>
@@ -29,7 +29,7 @@
 			<status>published</status>
 			<release_link>https://www.drupal.org/project/date/releases/7.x-3.0-alpha2</release_link>
 			<download_link>https://ftp.drupal.org/files/projects/date-7.x-3.0-alpha2.tar.gz</download_link>
-			<date>1662589105</date>
+			<date>1704236447</date>
 			<files>
 				<file>
 					<url>https://ftp.drupal.org/files/projects/date-7.x-3.0-alpha2.tar.gz</url>
