@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project xmlns:dc="http://purl.org/dc/elements/1.1/">
-	<title>NIHOD5 Test</title>
-	<short_name>test</short_name>
+	<title>NIHOD5</title>
+	<short_name>NIHOD5</short_name>
 	<dc:creator>AlexVanK</dc:creator>
 	<type>theme</type>
 	<api_version>10.x</api_version>
