@@ -1,10 +1,10 @@
-<project
-	xmlns:dc="http://purl.org/dc/elements/1.1/">
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns:dc="http://purl.org/dc/elements/1.1/">
 	<title>NIHOD5 Test</title>
 	<short_name>test</short_name>
-	<dc:creator>merlinofchaos</dc:creator>
+	<dc:creator>AlexVanK</dc:creator>
 	<type>project_module</type>
-	<api_version>10.x</api_version>
+	<api_version>1.x</api_version>
 	<recommended_major>1</recommended_major>
 	<supported_majors>1</supported_majors>
 	<default_major>1</default_major>
