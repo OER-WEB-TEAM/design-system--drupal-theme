@@ -1,19 +1,17 @@
+<!-- FORMAT @see: https://www.drupal.org/drupalorg/docs/apis/update-status-xml -->
 <?xml version="1.0" encoding="utf-8"?>
 <project xmlns:dc="http://purl.org/dc/elements/1.1/">
 	<title>NIHOD5</title>
 	<short_name>NIHOD5</short_name>
 	<dc:creator>AlexVanK</dc:creator>
-	<type>theme</type>
-	<api_version>10.x</api_version>
-	<recommended_major>1</recommended_major>
-	<supported_majors>1</supported_majors>
-	<default_major>1</default_major>
+	<supported_branches>1.2,1.1</supported_branches>
+	<type>project_theme</type>
 	<project_status>published</project_status>
 	<link>https://github.com/OER-WEB-TEAM/design-system--drupal-theme</link>
 	<terms>
 		<term>
 			<name>Projects</name>
-			<value>Modules</value>
+			<value>Themes</value>
 		</term>
 		<term>
 			<name>Maintenance status</name>
@@ -29,15 +27,10 @@
 			<name>NIHOD5 1.2.0</name>
 			<version>1.2.0</version>
 			<tag>1.2.0</tag>
-			<version_major>1</version_major>
-			<version_patch>2</version_patch>
-			<version_extra>0</version_extra>
 			<status>published</status>
 			<release_link>https://www.drupal.org/project/date/releases/7.x-3.0-alpha2</release_link>
 			<download_link>https://ftp.drupal.org/files/projects/date-7.x-3.0-alpha2.tar.gz</download_link>
 			<date>1662589105</date>
-			<mdhash>94b93bb5214b637a801e38d8379d95f5</mdhash>
-			<filesize>256534</filesize>
 			<files>
 				<file>
 					<url>https://ftp.drupal.org/files/projects/date-7.x-3.0-alpha2.tar.gz</url>
@@ -57,24 +50,20 @@
 			<terms>
 				<term>
 					<name>Release type</name>
-					<value>Bug fixes</value>
+					<value>New Features</value>
 				</term>
 			</terms>
 			<security>Alpha releases are not covered by Drupal security advisories.</security>
+			<core_compatibility>10.x</core_compatibility>
 		</release>
 		<release>
 			<name>NIHOD5 1.1.0</name>
 			<version>1.1.0</version>
 			<tag>1.1.0</tag>
-			<version_major>1</version_major>
-			<version_patch>1</version_patch>
-			<version_extra>0</version_extra>
 			<status>published</status>
 			<release_link>https://www.drupal.org/project/date/releases/7.x-3.0-alpha1</release_link>
 			<download_link>https://ftp.drupal.org/files/projects/date-7.x-3.0-alpha1.tar.gz</download_link>
 			<date>1630097677</date>
-			<mdhash>d916d8c6731e56d3e73d029f426b02fc</mdhash>
-			<filesize>252955</filesize>
 			<files>
 				<file>
 					<url>https://ftp.drupal.org/files/projects/date-7.x-3.0-alpha1.tar.gz</url>
@@ -98,6 +87,7 @@
 				</term>
 			</terms>
 			<security>Alpha releases are not covered by Drupal security advisories.</security>
+			<core_compatibility>10.x</core_compatibility>
 		</release>
 	</releases>
 </project>
