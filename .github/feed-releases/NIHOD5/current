@@ -4,6 +4,7 @@
 	<short_name>NIHOD5</short_name>
 	<dc:creator>AlexVanK</dc:creator>
 	<type>project_theme</type>
+	<supported_branches>1.x</supported_branches>
 	<project_status>published</project_status>
 	<link>https://github.com/OER-WEB-TEAM/design-system--drupal-theme</link>
 	<terms>
@@ -22,9 +23,9 @@
 	</terms>
 	<releases>
 		<release>
-			<name>NIHOD5 1.2.0</name>
-			<version>1.1.1</version>
-			<tag>1.1.1</tag>
+			<name>NIHOD5 1.1.0</name>
+			<version>1.1.0</version>
+			<tag>1.1.0</tag>
 			<status>published</status>
 			<release_link>https://www.drupal.org/project/date/releases/7.x-3.0-alpha2</release_link>
 			<download_link>https://ftp.drupal.org/files/projects/date-7.x-3.0-alpha2.tar.gz</download_link>
@@ -54,9 +55,9 @@
 			<security>Alpha releases are not covered by Drupal security advisories.</security>
 		</release>
 		<release>
-			<name>NIHOD5 1.1.0</name>
-			<version>1.1.0</version>
-			<tag>1.1.0</tag>
+			<name>NIHOD5 1.2.0</name>
+			<version>1.2.0</version>
+			<tag>1.2.0</tag>
 			<status>published</status>
 			<release_link>https://www.drupal.org/project/date/releases/7.x-3.0-alpha1</release_link>
 			<download_link>https://ftp.drupal.org/files/projects/date-7.x-3.0-alpha1.tar.gz</download_link>
