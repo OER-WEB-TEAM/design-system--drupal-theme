@@ -5,9 +5,9 @@
 	<dc:creator>AlexVanK</dc:creator>
 	<type>theme</type>
 	<api_version>10.x</api_version>
-	<recommended_major>2</recommended_major>
-	<supported_majors>2</supported_majors>
-	<default_major>2</default_major>
+	<recommended_major>1</recommended_major>
+	<supported_majors>1</supported_majors>
+	<default_major>1</default_major>
 	<project_status>published</project_status>
 	<link>https://github.com/OER-WEB-TEAM/design-system--drupal-theme</link>
 	<terms>
@@ -29,8 +29,8 @@
 			<name>NIHOD5 1.2.0</name>
 			<version>1.2.0</version>
 			<tag>1.2.0</tag>
-			<version_major>2</version_major>
-			<version_patch>0</version_patch>
+			<version_major>1</version_major>
+			<version_patch>2</version_patch>
 			<version_extra>0</version_extra>
 			<status>published</status>
 			<release_link>https://www.drupal.org/project/date/releases/7.x-3.0-alpha2</release_link>
@@ -67,7 +67,7 @@
 			<version>1.1.0</version>
 			<tag>1.1.0</tag>
 			<version_major>1</version_major>
-			<version_patch>0</version_patch>
+			<version_patch>1</version_patch>
 			<version_extra>0</version_extra>
 			<status>published</status>
 			<release_link>https://www.drupal.org/project/date/releases/7.x-3.0-alpha1</release_link>
