@@ -3,7 +3,7 @@
 	<title>NIHOD5</title>
 	<short_name>NIHOD5</short_name>
 	<dc:creator>AlexVanK</dc:creator>
-	<type>project_module</type>
+	<type>theme</type>
 	<api_version>10.x</api_version>
 	<recommended_major>2</recommended_major>
 	<supported_majors>2</supported_majors>
