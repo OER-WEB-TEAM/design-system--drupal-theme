@@ -61,41 +61,5 @@
 			</terms>
 			<security covered="1">Covered by Drupal's security advisory policy</security>
 		</release>
-		<release>
-			<name>NIHOD5 1.1.0</name>
-			<version>1.1.0</version>
-			<tag>1.1.0</tag>
-			<version_major>1</version_major>
-			<version_patch>0</version_patch>
-			<status>published</status>
-			<release_link>https://www.drupal.org/project/views/releases/7.x-3.29</release_link>
-			<download_link>https://ftp.drupal.org/files/projects/views-7.x-3.29.tar.gz</download_link>
-			<date>1678722009</date>
-			<mdhash>91182f951261980ff97faecf3d1ec327</mdhash>
-			<filesize>1667514</filesize>
-			<files>
-				<file>
-					<url>https://ftp.drupal.org/files/projects/views-7.x-3.29.tar.gz</url>
-					<archive_type>tar.gz</archive_type>
-					<md5>91182f951261980ff97faecf3d1ec327</md5>
-					<size>1667514</size>
-					<filedate>1678722009</filedate>
-				</file>
-				<file>
-					<url>https://ftp.drupal.org/files/projects/views-7.x-3.29.zip</url>
-					<archive_type>zip</archive_type>
-					<md5>79116a91f38a726dcc8b58fc96b3b835</md5>
-					<size>1944915</size>
-					<filedate>1678722009</filedate>
-				</file>
-			</files>
-			<terms>
-				<term>
-					<name>Release type</name>
-					<value>Bug fixes</value>
-				</term>
-			</terms>
-			<security covered="1">Covered by Drupal's security advisory policy</security>
-		</release>
 	</releases>
 </project>
