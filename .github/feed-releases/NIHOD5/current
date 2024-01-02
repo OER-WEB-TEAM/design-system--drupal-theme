@@ -1,4 +1,3 @@
-<!-- FORMAT @see: https://www.drupal.org/drupalorg/docs/apis/update-status-xml -->
 <?xml version="1.0" encoding="utf-8"?>
 <project xmlns:dc="http://purl.org/dc/elements/1.1/">
 	<title>NIHOD5</title>
