@@ -27,8 +27,8 @@
 	<releases>
 		<release>
 			<name>NIHOD5 1.2.0</name>
-			<version>v1.2.0</version>
-			<tag>v1.2.0</tag>
+			<version>1.2.0</version>
+			<tag>1.2.0</tag>
 			<version_major>2</version_major>
 			<version_patch>0</version_patch>
 			<status>published</status>
@@ -63,8 +63,8 @@
 		</release>
 		<release>
 			<name>NIHOD5 1.1.0</name>
-			<version>v1.1.0</version>
-			<tag>v1.1.0</tag>
+			<version>1.1.0</version>
+			<tag>1.1.0</tag>
 			<version_major>1</version_major>
 			<version_patch>0</version_patch>
 			<status>published</status>
