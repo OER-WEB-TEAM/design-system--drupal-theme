@@ -4,7 +4,7 @@
 	<short_name>test</short_name>
 	<dc:creator>AlexVanK</dc:creator>
 	<type>theme</type>
-	<api_version>2.x</api_version>
+	<api_version>10.x</api_version>
 	<recommended_major>2</recommended_major>
 	<supported_majors>2</supported_majors>
 	<default_major>2</default_major>
