@@ -28,7 +28,7 @@ jobs:
       #  run: pip install -r requirements.txt
 
       - name: Run script
-        run: python .github/release-feed/json2xml.py
+        run: python /json2xml.py
         working-directory: .github/release-feed
 
       - name: Commit changes
