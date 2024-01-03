@@ -1,6 +1,6 @@
 from urllib.request import urlopen
 import xml.etree.cElementTree as ET
-import json, datetime, urllib.request
+import json, datetime, urllib.request, hashlib
 
 # Get the JSON releases
 response = urlopen("https://api.github.com/repos/OER-WEB-TEAM/design-system--drupal-theme/releases")
@@ -10,7 +10,7 @@ data_json = json.loads(response.read())
 root = ET.Element("project")
 root.set("xmlns:dc","http://purl.org/dc/elements/1.1/")
 
-# version numbers
+# Version numbers
 vArray = data_json[0]["tag_name"].split(".")
 
 ET.SubElement(root, "title").text = "NIHOD5"
@@ -21,8 +21,8 @@ ET.SubElement(root, "supported_branches").text = "1.0.,1.1.,1.2.,1.3."
 ET.SubElement(root, "project_status").text = "published"
 ET.SubElement(root, "link").text = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme"
 
+# Write terms sub nodes
 terms = ET.SubElement(root, "terms")
-
 for x in range(3):
     term = ET.SubElement(terms, "term")
     match x:
@@ -36,6 +36,7 @@ for x in range(3):
             ET.SubElement(term, "name").text = "Development status"
             ET.SubElement(term, "value").text = "Under active development"
 
+# Write releases sub nodes
 releases = ET.SubElement(root, "releases")
 
 for x in range(len(data_json)):
@@ -61,19 +62,37 @@ for x in range(len(data_json)):
         match y:
             case 0:
                 tarUrl = data_json[x]["tarball_url"]
-                d = urllib.request.urlopen(tarUrl)
+
+                # Fetch file and store temporarily to be able to calculate size and checksum
+                with urllib.request.urlopen(tarUrl) as r:
+                    with tempfile.NamedTemporaryFile(delete=False) as tmpF:
+                        shutil.copyfileobj(r,tmpF)
+                with open(tmpF.name, "rb") as f:
+                    hash = hashlib.md5()
+                    while chunk := f.read(8192)
+                        hash.update(chunk)
+                        
                 ET.SubElement(file, "url").text = tarUrl
                 ET.SubElement(file, "archive_type").text = "tar.gz"
-                ET.SubElement(file, "md5").text = "123"
-                ET.SubElement(file, "size").text = d.info()["Content-Length"]
+                ET.SubElement(file, "md5").text = hash.hexdigest()
+                ET.SubElement(file, "size").text = r.info()["Content-Length"]
                 ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
             case 1:
                 zipUrl = data_json[x]["tarball_url"]
-                d = urllib.request.urlopen(zipUrl)
+
+                # Fetch file and store temporarily to be able to calculate size and checksum
+                with urllib.request.urlopen(tarUrl) as r:
+                    with tempfile.NamedTemporaryFile(delete=False) as tmpF:
+                        shutil.copyfileobj(r,tmpF)
+                with open(tmpF.name, "rb") as f:
+                    hash = hashlib.md5()
+                    while chunk := f.read(8192)
+                        hash.update(chunk)
+
                 ET.SubElement(file, "url").text = zipUrl
                 ET.SubElement(file, "archive_type").text = "zip"
-                ET.SubElement(file, "md5").text = "456"
-                ET.SubElement(file, "size").text = d.info()["Content-Length"]
+                ET.SubElement(file, "md5").text = hash.hexdigest()
+                ET.SubElement(file, "size").text = r.info()["Content-Length"]
                 ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
 
     terms = ET.SubElement(release, "terms")
