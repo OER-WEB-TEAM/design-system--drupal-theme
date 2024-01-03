@@ -13,15 +13,15 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          sparse-checkout: .github
-        
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
+    
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github
 
       # Maybe needed in the future
       # - name: Install dependencies
