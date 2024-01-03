@@ -69,7 +69,7 @@ for x in range(len(data_json)):
                         shutil.copyfileobj(r,tmpF)
                 with open(tmpF.name, "rb") as f:
                     hash = hashlib.md5()
-                    while chunk := f.read(8192)
+                    while chunk := f.read(8192):
                         hash.update(chunk)
                         
                 ET.SubElement(file, "url").text = tarUrl
@@ -86,7 +86,7 @@ for x in range(len(data_json)):
                         shutil.copyfileobj(r,tmpF)
                 with open(tmpF.name, "rb") as f:
                     hash = hashlib.md5()
-                    while chunk := f.read(8192)
+                    while chunk := f.read(8192):
                         hash.update(chunk)
 
                 ET.SubElement(file, "url").text = zipUrl
