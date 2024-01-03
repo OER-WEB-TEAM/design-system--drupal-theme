@@ -15,7 +15,7 @@ ET.SubElement(root, "title").text = "NIHOD5"
 ET.SubElement(root, "short_name").text = "NIHOD5"
 ET.SubElement(root, "dc:creator").text = "AlexVanK"
 ET.SubElement(root, "type").text = "project_theme"
-ET.SubElement(root, "supported_branches").text = "1.x"
+ET.SubElement(root, "supported_branches").text = "1.x.x"
 ET.SubElement(root, "project_status").text = "published"
 ET.SubElement(root, "link").text = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme"
 
