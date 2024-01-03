@@ -28,7 +28,9 @@ jobs:
       #  run: pip install -r requirements.txt
 
       - name: Run script
-        run: python json2xml.py
+        run: |
+          echo: $GITHUB_WORKSPACE
+          python json2xml.py
 
       - name: Commit changes
         run: git commit -a -m "GitHub Action | Updating XML release feed"
