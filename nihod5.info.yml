@@ -1,15 +1,22 @@
-name: "NIH OD 5.3.10"
+# Format @see: https://www.drupal.org/docs/develop/theming-drupal/defining-a-theme-with-an-infoyml-file
+
+name: NIHOD5
 type: theme
+base theme: bootstrap5
+core_version_requirement: "^9.4 || ^10"
+
 description: "NIH OD Styleguide Drupal theme.
   <ul>
     <li>Download and install <a href='https://www.drupal.org/project/bootstrap5' target=''>Bootstrap5</a> theme.</li>
     <li>Install NIH OD theme (this theme) and set as default.</li>
     <li>Optionally create subtheme based on this one.</li>
   </ul>
-  <b>Creating a subtheme is highly recommended as it will prevent any updates from wiping your customizations.</b>
-"
-core_version_requirement: "^9.4 || ^10"
-"base theme": bootstrap5
+  <b>Creating a subtheme is highly recommended as it will prevent any updates from wiping your customizations.</b>"
+
+version: 1.1.0
+project: NIHOD5
+project status url: https://raw.githubusercontent.com/OER-WEB-TEAM/design-system--drupal-theme/5.x.x/.github/feed-releases
+
 libraries:
   - nihod5/global-styling
   - nihod5/bootstrapIcons
@@ -33,3 +40,9 @@ regions:
 
 libraries-override:
   bootstrap5/global-styling: false
+
+
+#hidden
+# implement this to hide theme in appearance panel
+# only do this if this theme can be activated by activating subtheme
+# would be useful to prevent people from doing customizations on this one
