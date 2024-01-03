@@ -12,7 +12,7 @@ root = ET.Element("project")
 root.set("xmlns:dc","http://purl.org/dc/elements/1.1/")
 
 # version numbers
-vArray = data_json[0]["tag_name"].split(".")[0]
+vArray = data_json[0]["tag_name"].split(".")
 
 ET.SubElement(root, "title").text = "NIHOD5"
 ET.SubElement(root, "short_name").text = "NIHOD5"
