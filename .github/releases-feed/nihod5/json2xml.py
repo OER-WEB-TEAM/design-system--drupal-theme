@@ -83,4 +83,4 @@ for x in range(len(data_json)):
     # ET.SubElement(release, "security").text =
 
 tree = ET.ElementTree(root)
-tree.write("filename.xml", encoding="UTF-8", xml_declaration=True)
+tree.write("current", encoding="UTF-8", xml_declaration=True)
