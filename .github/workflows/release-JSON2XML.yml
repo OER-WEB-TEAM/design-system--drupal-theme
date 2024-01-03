@@ -1,0 +1,33 @@
+# Legit tutorial @see: https://www.python-engineer.com/posts/run-python-github-actions/
+name: Release JSON to XML converter
+
+on:
+  push:
+    branches: [5.x.x]
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      # Maybe needed in the future
+      # - name: Install dependencies
+      #  run: pip install -r requirements.txt
+
+      - name: Run script
+        run: python 
+
+      - name: Commit changes
+        run: git commit -a -m "GitHub Action | Updating XML release feed"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          branch: main 
