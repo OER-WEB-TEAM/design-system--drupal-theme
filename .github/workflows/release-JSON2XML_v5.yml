@@ -15,7 +15,7 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         #with:
           #sparse-checkout: .github
 
@@ -32,7 +32,7 @@ jobs:
         run: |
           echo "hi"
           ls ${{github.workspace}}
-          ls ./.github
+          ls *
           echo "ciaone"
 # python .github/release-feed/nihod5/json2xml.py
 
