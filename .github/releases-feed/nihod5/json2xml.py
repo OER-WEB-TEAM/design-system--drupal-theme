@@ -2,6 +2,8 @@ from urllib.request import urlopen
 import json
 import xml.etree.cElementTree as ET
 import datetime
+import urllib, os
+import hashlib
 
 # Get the JSON releases
 response = urlopen("https://api.github.com/repos/OER-WEB-TEAM/design-system--drupal-theme/releases")
@@ -18,7 +20,7 @@ ET.SubElement(root, "title").text = "NIHOD5"
 ET.SubElement(root, "short_name").text = "NIHOD5"
 ET.SubElement(root, "dc:creator").text = "AlexVanK"
 ET.SubElement(root, "type").text = "project_theme"
-#ET.SubElement(root, "supported_branches").text = data_json[0]["tag_name"] #vArray[0] + "." + vArray[1] + "."
+ET.SubElement(root, "supported_branches").text = "1.0.,1.1.,1.2.,1.3."
 ET.SubElement(root, "project_status").text = "published"
 ET.SubElement(root, "link").text = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme"
 
@@ -58,13 +60,32 @@ for x in range(len(data_json)):
     files = ET.SubElement(release, "files")
     for y in range(2):
         file = ET.SubElement(files,"file")
+
         match y:
             case 0:
-                ET.SubElement(file, "url").text = data_json[x]["tarball_url"]
+                tarUrl = data_json[x]["tarball_url"]
+                filemeta = urllib.urlopen(tarUrl).info()
+                with open(filemeta, "rb") as f:
+                    file_hash = hashlib.md5()
+                    while chunk := f.read(8192):
+                        file_hash.update(chunk)
+                ET.SubElement(file, "url").text = tarUrl
                 ET.SubElement(file, "archive_type").text = "tar.gz"
+                ET.SubElement(file, "md5").text = file_hash
+                ET.SubElement(file, "size").text = filemeta.getheaders("Content-Length")[0]
+                ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
             case 1:
-                ET.SubElement(file, "url").text = data_json[x]["zipball_url"]
+                zipUrl = data_json[x]["tarball_url"]
+                filemeta = urllib.urlopen(zipUrl).info()
+                with open(filemeta, "rb") as f:
+                    file_hash = hashlib.md5()
+                    while chunk := f.read(8192):
+                        file_hash.update(chunk)
+                ET.SubElement(file, "url").text = zipUrl
                 ET.SubElement(file, "archive_type").text = "zip"
+                ET.SubElement(file, "md5").text = file_hash
+                ET.SubElement(file, "size").text = filemeta.getheaders("Content-Length")[0]
+                ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
 
     terms = ET.SubElement(release, "terms")
     term = ET.SubElement(terms, "term")
