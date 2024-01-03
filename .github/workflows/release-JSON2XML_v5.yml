@@ -31,7 +31,6 @@ jobs:
       - name: Run script
         run: |
           echo "hi"
-          ls ${{github.workspace}}
           ls *
           echo "ciaone"
           python release-feed/nihod5/json2xml.py
