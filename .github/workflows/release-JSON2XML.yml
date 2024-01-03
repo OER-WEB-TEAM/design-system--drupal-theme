@@ -1,5 +1,5 @@
 # Legit tutorial @see: https://www.python-engineer.com/posts/run-python-github-actions/
-name: Release JSON to XML converter
+name: Release Feed | JSON to XML converter
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
       #  run: pip install -r requirements.txt
 
       - name: Run script
-        run: python 
+        run: python .github/release-feed/json2xml.py
 
       - name: Commit changes
         run: git commit -a -m "GitHub Action | Updating XML release feed"
