@@ -1,9 +1,9 @@
 # Legit tutorial @see: https://www.python-engineer.com/posts/run-python-github-actions/
 name: Release Feed | JSON to XML converter
 
-#defaults:
-#  run:
-#    working-directory: .github/release-feed/nihod5
+defaults:
+  run:
+    working-directory: .github
 
 on:
   push:
