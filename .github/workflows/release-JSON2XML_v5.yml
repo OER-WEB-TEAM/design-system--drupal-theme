@@ -29,8 +29,7 @@ jobs:
 
       - name: Run script
         run: |
-          echo: $GITHUB_WORKSPACE
-          python json2xml.py
+          echo $GITHUB_WORKSPACE
 
       - name: Commit changes
         run: git commit -a -m "GitHub Action | Updating XML release feed"
