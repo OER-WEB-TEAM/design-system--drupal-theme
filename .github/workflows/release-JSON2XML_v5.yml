@@ -33,7 +33,7 @@ jobs:
           echo "hi"
           ls *
           echo "ciaone"
-          python release-feed/nihod5/json2xml.py
+          python releases-feed/nihod5/json2xml.py
 # python .github/release-feed/nihod5/json2xml.py
 
       - name: Commit changes
