@@ -31,8 +31,7 @@ jobs:
         run: |
           echo "hi"
           ls ${{github.workspace}}
-          echo ${GITHUB_WORKSPACE}
-          echo ${{env.PROJECT_PATH}}
+          ls ./.github
           echo "ciaone"
 # python .github/release-feed/nihod5/json2xml.py
 
