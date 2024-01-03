@@ -62,25 +62,17 @@ for x in range(len(data_json)):
             case 0:
                 tarUrl = data_json[x]["tarball_url"]
                 filemeta = urllib.request.urlopen(tarUrl).info()
-                with open(filemeta, "rb") as f:
-                    file_hash = hashlib.md5()
-                    while chunk := f.read(8192):
-                        file_hash.update(chunk)
                 ET.SubElement(file, "url").text = tarUrl
                 ET.SubElement(file, "archive_type").text = "tar.gz"
-                ET.SubElement(file, "md5").text = file_hash
+                ET.SubElement(file, "md5").text = 123
                 ET.SubElement(file, "size").text = filemeta.getheaders("Content-Length")[0]
                 ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
             case 1:
                 zipUrl = data_json[x]["tarball_url"]
                 filemeta = urllib.request.urlopen(zipUrl).info()
-                with open(filemeta, "rb") as f:
-                    file_hash = hashlib.md5()
-                    while chunk := f.read(8192):
-                        file_hash.update(chunk)
                 ET.SubElement(file, "url").text = zipUrl
                 ET.SubElement(file, "archive_type").text = "zip"
-                ET.SubElement(file, "md5").text = file_hash
+                ET.SubElement(file, "md5").text = 456
                 ET.SubElement(file, "size").text = filemeta.getheaders("Content-Length")[0]
                 ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
 
