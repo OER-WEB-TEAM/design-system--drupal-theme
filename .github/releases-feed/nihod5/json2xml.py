@@ -61,7 +61,6 @@ for x in range(len(data_json)):
         file = ET.SubElement(files,"file")
         match y:
             case 0:
-                print(y,"hi")
                 tarUrl = data_json[x]["tarball_url"]
 
                 # Fetch file and store temporarily to be able to calculate size and checksum
@@ -79,8 +78,7 @@ for x in range(len(data_json)):
                 ET.SubElement(file, "size").text = r.info()["Content-Length"]
                 ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
             case 1:
-                print(y,"hola")
-                zipUrl = data_json[x]["tarball_url"]
+                zipUrl = data_json[x]["zipball_url"]
 
                 # Fetch file and store temporarily to be able to calculate size and checksum
                 with urllib.request.urlopen(zipUrl) as r:
