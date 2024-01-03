@@ -77,11 +77,12 @@ for x in range(len(data_json)):
                 ET.SubElement(file, "md5").text = hash.hexdigest()
                 ET.SubElement(file, "size").text = r.info()["Content-Length"]
                 ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
+                break
             case 1:
                 zipUrl = data_json[x]["tarball_url"]
 
                 # Fetch file and store temporarily to be able to calculate size and checksum
-                with urllib.request.urlopen(tarUrl) as r:
+                with urllib.request.urlopen(zipUrl) as r:
                     with tempfile.NamedTemporaryFile(delete=False) as tmpF:
                         shutil.copyfileobj(r,tmpF)
                 with open(tmpF.name, "rb") as f:
@@ -94,6 +95,7 @@ for x in range(len(data_json)):
                 ET.SubElement(file, "md5").text = hash.hexdigest()
                 ET.SubElement(file, "size").text = r.info()["Content-Length"]
                 ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
+                break
 
     terms = ET.SubElement(release, "terms")
     term = ET.SubElement(terms, "term")
