@@ -61,7 +61,7 @@ for x in range(len(data_json)):
         match y:
             case 0:
                 tarUrl = data_json[x]["tarball_url"]
-                filemeta = urllib.urlopen(tarUrl).info()
+                filemeta = urllib.request.urlopen(tarUrl).info()
                 with open(filemeta, "rb") as f:
                     file_hash = hashlib.md5()
                     while chunk := f.read(8192):
@@ -73,7 +73,7 @@ for x in range(len(data_json)):
                 ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
             case 1:
                 zipUrl = data_json[x]["tarball_url"]
-                filemeta = urllib.urlopen(zipUrl).info()
+                filemeta = urllib.request.urlopen(zipUrl).info()
                 with open(filemeta, "rb") as f:
                     file_hash = hashlib.md5()
                     while chunk := f.read(8192):
