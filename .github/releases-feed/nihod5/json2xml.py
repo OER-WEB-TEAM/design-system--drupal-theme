@@ -1,9 +1,6 @@
 from urllib.request import urlopen
-import json
 import xml.etree.cElementTree as ET
-import datetime
-import urllib, os
-import hashlib
+import json, datetime, urllib, os, hashlib
 
 # Get the JSON releases
 response = urlopen("https://api.github.com/repos/OER-WEB-TEAM/design-system--drupal-theme/releases")
