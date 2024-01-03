@@ -77,7 +77,7 @@ for x in range(len(data_json)):
                 ET.SubElement(file, "md5").text = hash.hexdigest()
                 ET.SubElement(file, "size").text = r.info()["Content-Length"]
                 ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
-                break
+                return
             case 1:
                 zipUrl = data_json[x]["tarball_url"]
 
@@ -95,7 +95,7 @@ for x in range(len(data_json)):
                 ET.SubElement(file, "md5").text = hash.hexdigest()
                 ET.SubElement(file, "size").text = r.info()["Content-Length"]
                 ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
-                break
+                return
 
     terms = ET.SubElement(release, "terms")
     term = ET.SubElement(terms, "term")
