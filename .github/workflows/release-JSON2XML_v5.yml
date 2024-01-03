@@ -16,8 +16,7 @@ jobs:
       - name: Checkout repository
       - uses: actions/checkout@v4
         with:
-          sparse-checkout: |
-            .github
+          sparse-checkout: .github
 
       - name: Set up Python
         uses: actions/setup-python@v4
