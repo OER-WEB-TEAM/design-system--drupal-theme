@@ -64,7 +64,7 @@ for x in range(len(data_json)):
                 d = urllib.request.urlopen(tarUrl)
                 ET.SubElement(file, "url").text = tarUrl
                 ET.SubElement(file, "archive_type").text = "tar.gz"
-                ET.SubElement(file, "md5").text = 123
+                ET.SubElement(file, "md5").text = "123"
                 ET.SubElement(file, "size").text = d.info()["Content-Length"]
                 ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
             case 1:
@@ -72,7 +72,7 @@ for x in range(len(data_json)):
                 d = urllib.request.urlopen(zipUrl)
                 ET.SubElement(file, "url").text = zipUrl
                 ET.SubElement(file, "archive_type").text = "zip"
-                ET.SubElement(file, "md5").text = 456
+                ET.SubElement(file, "md5").text = "456"
                 ET.SubElement(file, "size").text = d.info()["Content-Length"]
                 ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
 
