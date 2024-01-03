@@ -29,8 +29,10 @@ jobs:
 
       - name: Run script
         run: |
+          echo "hi"
           echo ${GITHUB_WORKSPACE}
-          echo ${env.PROJECT_PATH}
+          echo ${{env.PROJECT_PATH}}
+          echo "ciaone"
 # python .github/release-feed/nihod5/json2xml.py
 
       - name: Commit changes
