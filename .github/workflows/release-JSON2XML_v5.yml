@@ -1,4 +1,6 @@
-# Legit tutorial @see: https://www.python-engineer.com/posts/run-python-github-actions/
+# Docs
+# @see: https://www.python-engineer.com/posts/run-python-github-actions/
+# @see: https://github.com/actions/checkout
 name: Release Feed | JSON to XML converter
 
 on:
@@ -16,25 +18,20 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        #with:
-          #sparse-checkout: .github
+        with:
+          sparse-checkout: .github
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: '3.7'
 
       # Maybe needed in the future
       # - name: Install dependencies
       #  run: pip install -r requirements.txt
 
       - name: Run script
-        run: |
-          echo "hi"
-          ls *
-          echo "ciaone"
-          python releases-feed/nihod5/json2xml.py
-# python .github/release-feed/nihod5/json2xml.py
+        run: python releases-feed/nihod5/json2xml.py
 
       - name: Commit changes
         run: git commit -a -m "GitHub Action | Updating XML release feed"
