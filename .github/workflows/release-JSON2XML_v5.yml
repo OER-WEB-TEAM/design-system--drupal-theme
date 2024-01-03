@@ -24,7 +24,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.7'
+          python-version: '3.11'
 
       # Maybe needed in the future
       # - name: Install dependencies
@@ -34,7 +34,11 @@ jobs:
         run: python releases-feed/nihod5/json2xml.py
 
       - name: Commit changes
-        run: git commit -a -m "GitHub Action | Updating XML release feed"
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -a -m "GitHub Action | Updating XML release feed"
 
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
