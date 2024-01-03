@@ -1,6 +1,6 @@
 from urllib.request import urlopen
 import xml.etree.cElementTree as ET
-import json, datetime, urllib, os, hashlib
+import json, datetime, urllib.request
 
 # Get the JSON releases
 response = urlopen("https://api.github.com/repos/OER-WEB-TEAM/design-system--drupal-theme/releases")
@@ -61,19 +61,19 @@ for x in range(len(data_json)):
         match y:
             case 0:
                 tarUrl = data_json[x]["tarball_url"]
-                filemeta = urllib.request.urlopen(tarUrl).info()
+                d = urllib.request.urlopen(tarUrl)
                 ET.SubElement(file, "url").text = tarUrl
                 ET.SubElement(file, "archive_type").text = "tar.gz"
                 ET.SubElement(file, "md5").text = 123
-                ET.SubElement(file, "size").text = filemeta.getheaders("Content-Length")[0]
+                ET.SubElement(file, "size").text = d.info()["Content-Length"]
                 ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
             case 1:
                 zipUrl = data_json[x]["tarball_url"]
-                filemeta = urllib.request.urlopen(zipUrl).info()
+                d = urllib.request.urlopen(zipUrl)
                 ET.SubElement(file, "url").text = zipUrl
                 ET.SubElement(file, "archive_type").text = "zip"
                 ET.SubElement(file, "md5").text = 456
-                ET.SubElement(file, "size").text = filemeta.getheaders("Content-Length")[0]
+                ET.SubElement(file, "size").text = d.info()["Content-Length"]
                 ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
 
     terms = ET.SubElement(release, "terms")
