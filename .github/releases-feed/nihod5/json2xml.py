@@ -81,6 +81,9 @@ for x in range(len(data_json)):
         ET.SubElement(file, "archive_type").text = fileType
         ET.SubElement(file, "md5").text = hash.hexdigest()
         ET.SubElement(file, "size").text = data_json[x]["assets"][y]["size"]
+
+        # Force filedate to be the same as repo publishing date
+        # Technically this is not accurate as the file is generated sligthly later by another worfklow
         ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
 
     terms = ET.SubElement(release, "terms")
