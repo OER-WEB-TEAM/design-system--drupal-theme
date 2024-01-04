@@ -46,6 +46,12 @@
                <filedate>1702411155</filedate>
             </file>
          </files>
+         <terms>
+            <term>
+               <name>Release type</name>
+               <value>New features</value>
+            </term>
+         </terms>
       </release>
       <release>
          <name>NIHOD5 1.0.1</name>
@@ -73,7 +79,7 @@
          </files>
          <terms>
             <term>
-               <name>Release Type</name>
+               <name>Release type</name>
                <value>Bug fixes</value>
             </term>
          </terms>
@@ -104,7 +110,7 @@
          </files>
          <terms>
             <term>
-               <name>Release Type</name>
+               <name>Release type</name>
                <value>New features</value>
             </term>
          </terms>
