@@ -35,6 +35,7 @@ jobs:
 
       - name: Create zip and tar.gz
         run: |
+          cd ..
           ls -d *
           echo $GITHUB_REF_NAME
           zip nihod5-v$GITHUB_REF_NAME.zip nihod5
