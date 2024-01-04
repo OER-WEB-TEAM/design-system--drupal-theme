@@ -4,11 +4,14 @@
 # @see: https://stackoverflow.com/questions/59319281/github-action-different-between-release-created-and-published
 
 # This workflow converts the JSON /releases api response into XML format suitable for Drupal update checker
+# Note that this workflow should only run if the addassets.yml workflow is done
 name: Release Feed | JSON to XML converter
 
 on:
-  release:
-    types: [published]
+  workflow_run:
+    workflows: ["Release | Add Assets"]
+    types:
+      - completed
 
 jobs:
   run-script:
