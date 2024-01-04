@@ -2,7 +2,7 @@
 
 # The variable ${{github.ref_name}} contains the tag if the workflow was triggered on release
 # @see: https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
-name: Release | Package Up repository
+name: Release | Add Assets
 
 on:
   release:
