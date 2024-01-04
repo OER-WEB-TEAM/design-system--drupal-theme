@@ -15,7 +15,7 @@ root = ET.Element("project")
 root.set("xmlns:dc","http://purl.org/dc/elements/1.1/")
 
 # Version numbers
-vArray = data_json[0]["name"].split(".")
+vArray = data_json[0]["tag_name"].split(".")
 supported = vArray[0] + "." + vArray[1] + "."
 
 ET.SubElement(root, "title").text = "NIHOD5"
