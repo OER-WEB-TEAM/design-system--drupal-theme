@@ -69,14 +69,10 @@ for x in range(len(data_json)):
                     with tempfile.NamedTemporaryFile(delete=False) as tmpF:
                         shutil.copyfileobj(r,tmpF)
                 with open(tmpF.name, "rb") as f:
-                    print("hi")
-                    print(f.info())
                     hash = hashlib.md5()
                     while chunk := f.read(8192):
                         hash.update(chunk)
 
-                
-                        
                 ET.SubElement(file, "url").text = tarUrl
                 ET.SubElement(file, "archive_type").text = "tar.gz"
                 ET.SubElement(file, "md5").text = hash.hexdigest()
@@ -94,8 +90,6 @@ for x in range(len(data_json)):
                     hash = hashlib.md5()
                     while chunk := f.read(8192):
                         hash.update(chunk)
-
-                print(r.info()["Content-Length"])
 
                 ET.SubElement(file, "url").text = zipUrl
                 ET.SubElement(file, "archive_type").text = "zip"
