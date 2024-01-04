@@ -36,7 +36,8 @@ jobs:
       - name: Create zip and tar.gz
         run: |
           ls -d *
-          zip nihod5-v${{ env.RELEASE_VERSION }}.zip nihod5
+          echo $GITHUB_REF_NAME
+          zip nihod5-v$GITHUB_REF_NAME.zip nihod5
           ls -d *
        
           
