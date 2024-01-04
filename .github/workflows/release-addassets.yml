@@ -27,7 +27,7 @@ jobs:
         
       - name: Create zip file
         run: |
-          cp -a . nihod5
+          cp -a * nihod5
           zip -r nihod5-v$GITHUB_REF_NAME.zip nihod5/
 
       - name: Create gzip file
