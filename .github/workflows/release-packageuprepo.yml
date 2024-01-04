@@ -29,10 +29,11 @@ jobs:
       - name: Rename project folder
         run: |
           cd ..
-          echo "test"
-          ls -d * 
           mv ${{ github.event.repository.name }} nihod5
-          echo "test after rename"
+
+      - name: Create zip and tar.gz
+        run: |
+          zip nihod5-v${{  github.ref_name }}.zip nihod5
           ls -d *
        
           
