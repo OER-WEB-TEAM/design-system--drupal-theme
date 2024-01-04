@@ -66,7 +66,7 @@ for x in range(len(data_json)):
         file = ET.SubElement(files,"file")
         match y:
             case 0:
-                fileURL = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/" + fullVersion + ".tar.gz"'
+                fileURL = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/" + fullVersion + ".tar.gz"
                 fileType = "tar.gz"
             case 1:
                 fileURL = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/" + fullVersion + ".zip"
