@@ -5,8 +5,8 @@ name: Release | Package Up repository
 on:
   #release:
   #  types: [published]
-  commit:
-    branches: [5.x.x]
+  push:
+    branches: ["5.x.x"]
 
 
 jobs:
