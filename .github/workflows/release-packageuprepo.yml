@@ -35,7 +35,7 @@ jobs:
       - name: Create tar and gzip
         run: |
           tar -cf nihod5-v$GITHUB_REF_NAME.tar .
-          tar -czf nihod5-v$GITHUB_REF_NAME.tar.gz
+          tar -czf nihod5-v$GITHUB_REF_NAME.tar.gz nihod5-v$GITHUB_REF_NAME.tar
           ls -d *
        
           
