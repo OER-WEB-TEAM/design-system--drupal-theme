@@ -28,17 +28,9 @@ jobs:
         run: |
           rm -r -f .github
 
-      - name: Rename project folder
+      - name: Create zip file
         run: |
-          cd ..
-          mv ${{ github.event.repository.name }} nihod5
-
-      - name: Create zip and tar.gz
-        run: |
-          cd ..
-          ls -d *
-          echo $GITHUB_REF_NAME
-          zip nihod5-v$GITHUB_REF_NAME.zip nihod5
+          zip -r nihod5-v$GITHUB_REF_NAME.zip .
           ls -d *
        
           
