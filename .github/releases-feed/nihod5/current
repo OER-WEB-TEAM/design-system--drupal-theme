@@ -46,12 +46,6 @@
                <filedate>1702411155</filedate>
             </file>
          </files>
-         <terms>
-            <term>
-               <name>Release Type</name>
-               <value>New features</value>
-            </term>
-         </terms>
       </release>
       <release>
          <name>NIHOD5 1.0.1</name>
