@@ -34,10 +34,16 @@
             <file>
                <url>https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/1.1.0.tar.gz</url>
                <archive_type>tar.gz</archive_type>
+               <md5>43cb11959bd2bca13295841a8a834bf8</md5>
+               <size>31285864</size>
+               <filedate>1703201523</filedate>
             </file>
             <file>
                <url>https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/1.1.0.zip</url>
                <archive_type>zip</archive_type>
+               <md5>d2ce4d52f81acce05321836749b0e9e1</md5>
+               <size>31285864</size>
+               <filedate>1703201523</filedate>
             </file>
          </files>
          <terms>
