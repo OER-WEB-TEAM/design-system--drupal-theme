@@ -71,7 +71,7 @@ for x in range(len(data_json)):
             with tempfile.NamedTemporaryFile(delete=False) as tmpF:
                 shutil.copyfileobj(r,tmpF)
         with open(tmpF.name, "rb") as f:
-                hash = hashlib.md5()
+            hash = hashlib.md5()
             while chunk := f.read(8192):
                 hash.update(chunk)
     
