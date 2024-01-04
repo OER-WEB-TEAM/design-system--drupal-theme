@@ -4,7 +4,7 @@
    <short_name>NIHOD5</short_name>
    <dc:creator>AlexVanK</dc:creator>
    <type>project_theme</type>
-   <supported_branches>1.0.,1.0.x,1.1.,1.2.</supported_branches>
+   <supported_branches>1.1.x.x</supported_branches>
    <project_status>published</project_status>
    <link>https://github.com/OER-WEB-TEAM/design-system--drupal-theme</link>
    <terms>
