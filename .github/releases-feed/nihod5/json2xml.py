@@ -92,8 +92,8 @@ for x in range(len(data_json)):
     # Write terms information
     release_type = "New features"
     if x > 0:
-        currentRelease__versionIndexes = data_json[x]["tag_name"].split(".")
-        previousRelease_versionIndexes = data_json[x-1]["tag_name"].split(".")
+        currentRelease__versionIndexes = fullVersion.split(".")
+        previousRelease_versionIndexes = data_json[x-1]["name"].split(".")
         if currentRelease__versionIndexes[1] > previousRelease_versionIndexes[1]:
             release_type = "New features"
         elif currentRelease__versionIndexes[2] > previousRelease_versionIndexes[2]:
