@@ -52,7 +52,7 @@ for x in range(len(data_json)):
     ET.SubElement(release, "version").text = fullVersion
     ET.SubElement(release, "tag").text = fullVersion
     ET.SubElement(release, "status").text = "published"
-    ET.SubElement(release, "release_link").text = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/releases/tag/" + fullVersion
+    ET.SubElement(release, "release_link").text = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/releases/" + fullVersion
     ET.SubElement(release, "download_link").text = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/" + fullVersion + ".tar.gz"
 
     new_time = data_json[x]["published_at"]
