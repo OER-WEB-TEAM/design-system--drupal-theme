@@ -2,6 +2,8 @@
 # @see: https://www.python-engineer.com/posts/run-python-github-actions/
 # @see: https://github.com/actions/checkout
 # @see: https://stackoverflow.com/questions/59319281/github-action-different-between-release-created-and-published
+
+# This workflow converts the JSON /releases api response into XML format suitable for Drupal update checker
 name: Release Feed | JSON to XML converter
 
 on:
