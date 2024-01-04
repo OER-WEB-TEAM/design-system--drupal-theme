@@ -16,7 +16,7 @@ root.set("xmlns:dc","http://purl.org/dc/elements/1.1/")
 
 # Version numbers
 vArray = data_json[0]["name"].split(".")
-supported = vArray[0] + "." + int(vArray[1]) - 1 + ".," + vArray[0] + "." + vArray[1] + "."
+supported = vArray[0] + "." + str(int(vArray[1]) - 1) + ".," + vArray[0] + "." + vArray[1] + "."
 
 ET.SubElement(root, "title").text = "NIHOD5"
 ET.SubElement(root, "short_name").text = "NIHOD5"
