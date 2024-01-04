@@ -26,9 +26,11 @@ jobs:
           rm -r -f .git
         
       - name: Create zip file
-        run: zip -r nihod5-v$GITHUB_REF_NAME.zip nihod5
+        run: |
+          cp * nihod5
+          zip -r nihod5-v$GITHUB_REF_NAME.zip nihod5
 
-      - name: Create tar and gzip
+      - name: Create gzip file
         run: |
           tar -czf nihod5-v$GITHUB_REF_NAME.tar.gz nihod5
 
