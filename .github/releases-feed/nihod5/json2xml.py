@@ -16,7 +16,13 @@ root.set("xmlns:dc","http://purl.org/dc/elements/1.1/")
 
 # Version numbers
 vArray = data_json[0]["tag_name"].split(".")
-supported = vArray[0] + "." + vArray[1] + "."
+
+# Support only last three minor versions
+# NOTE: when major version changes we'll have to use another workflow
+minorIndex = int(vArray[1])
+for x in range(3 if minorIndex > 2 else minorIndex):
+    delimiter = ".," if x != 2 else "."
+    supported += vArray[0] + "." vArray[1] + delimiter
 
 ET.SubElement(root, "title").text = "NIHOD5"
 ET.SubElement(root, "short_name").text = "NIHOD5"
