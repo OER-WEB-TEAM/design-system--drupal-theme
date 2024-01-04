@@ -47,8 +47,7 @@ for x in range(len(data_json)):
     release = ET.SubElement(releases, "release")
     fullVersion = data_json[x]["tag_name"]
     downloadLinkFallback = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/" + fullVersion + ".tar.gz"
-    downloadLinkGzip = data_json[x]["assets"][0]["browser_download_url"]
-    downloadLink =  downloadLinkFallback if not data_json[x]["assets"] else downloadLinkGzip
+    downloadLink =  downloadLinkFallback if not data_json[x]["assets"] else data_json[x]["assets"][0]["browser_download_url"]
     
     # Write release meta data
     ET.SubElement(release, "name").text = data_json[x]["name"]
