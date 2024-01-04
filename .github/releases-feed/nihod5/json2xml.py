@@ -4,7 +4,10 @@ import json, datetime, tempfile, shutil, urllib.request, hashlib
 
 
 # Get the JSON releases
-response = urlopen("https://api.github.com/repos/OER-WEB-TEAM/design-system--drupal-theme/releases")
+api1 = "https://api.github.com/repos/OER-WEB-TEAM/design-system--drupal-theme/releases"
+api2 = "https://api.github.com/repos/OER-WEB-TEAM/design-system--drupal-theme/tags"
+
+response = urlopen(api2)
 data_json = json.loads(response.read())
 
 # Build XML tree
@@ -42,28 +45,30 @@ releases = ET.SubElement(root, "releases")
 
 for x in range(len(data_json)):
     release = ET.SubElement(releases, "release")
-
+    fullVersion = data_json[x]["name"]
+    
     # Write release meta data
-    ET.SubElement(release, "name").text = "NIHOD5 " + data_json[x]["name"]
-    ET.SubElement(release, "version").text = data_json[x]["tag_name"]
-    ET.SubElement(release, "tag").text = data_json[x]["tag_name"]
+    ET.SubElement(release, "name").text = "NIHOD5 " + fullVersion
+    ET.SubElement(release, "version").text = fullVersion
+    ET.SubElement(release, "tag").text = fullVersion
     ET.SubElement(release, "status").text = "published"
-    ET.SubElement(release, "release_link").text = data_json[x]["html_url"]
-    ET.SubElement(release, "download_link").text = data_json[x]["tarball_url"]
+    ET.SubElement(release, "release_link").text = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/releases/tag/" + fullVersion
+    ET.SubElement(release, "download_link").text = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/" + fullVersion + ".tar.gz"
 
     new_time = data_json[2]["published_at"]
     timestamp = datetime.datetime.strptime(new_time, "%Y-%m-%dt%H:%M:%S%z").timestamp()
     ET.SubElement(release, "date").text = str(timestamp).split(".")[0]
 
     # Write files information
+    # This will have to come from the assets array (see api1)
     files = ET.SubElement(release, "files")
     for y in range(2):
         file = ET.SubElement(files,"file")
         match y:
             case 0:
-                fileURL = data_json[x]["tarball_url"]
+                fileURL = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/" + fullVersion + ".tar.gz"
             case 1:
-                fileURL = data_json[x]["zipball_url"]
+                fileURL = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/" + fullVersion + ".zip"
 
         # Fetch file and store temporarily to be able to calculate size and checksum
         d = urllib.request.urlopen(fileURL)
