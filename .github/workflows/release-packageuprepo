@@ -1,0 +1,35 @@
+# This workflows creates deployable binaries suitable for Drupal updates
+
+name: Release | Package Up repository
+
+on:
+  #release:
+  #  types: [published]
+  commit:
+    branches: [5.x.x]
+
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    #defaults:
+    #  run:
+    #    working-directory: .github/releases-feed/nihod5
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Delete .github folder
+        run: |
+          rm -r -f .github
+          ls *
+
+      # Maybe needed in the future
+      #
+      # - name: Install dependencies
+      #   run: pip install -r requirements.txt
+      #
+      # not needed for now as every library needed
+      # in the script already comes with Python
