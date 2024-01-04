@@ -61,51 +61,25 @@ for x in range(len(data_json)):
         file = ET.SubElement(files,"file")
         match y:
             case 0:
-                tarUrl = data_json[x]["tarball_url"]
-
-                # Fetch file and store temporarily to be able to calculate size and checksum
-                d = urllib.request.urlopen(tarUrl)
-                print("tar info")
-                print(d.info())
-                print("quindi")
-                print(d.info()["Content-Length"])
-                
-                with urllib.request.urlopen(tarUrl) as r:
-                    with tempfile.NamedTemporaryFile(delete=False) as tmpF:
-                        shutil.copyfileobj(r,tmpF)
-                with open(tmpF.name, "rb") as f:
-                    hash = hashlib.md5()
-                    while chunk := f.read(8192):
-                        hash.update(chunk)
-
-                ET.SubElement(file, "url").text = tarUrl
-                ET.SubElement(file, "archive_type").text = "tar.gz"
-                ET.SubElement(file, "md5").text = hash.hexdigest()
-                ET.SubElement(file, "size").text = d.info()["Content-Length"]
-                ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
+                fileURL = data_json[x]["tarball_url"]
             case 1:
-                zipUrl = data_json[x]["zipball_url"]
-                d = urllib.request.urlopen(zipUrl)
-                print("zip info")
-                print(d.info())
-                print("quindi")
-                print(d.info()["Content-Length"])
+                fileURL = data_json[x]["zipball_url"]
 
-                # Fetch file and store temporarily to be able to calculate size and checksum
-                d = urllib.request.urlopen(zipUrl)
-                with urllib.request.urlopen(zipUrl) as r:
-                    with tempfile.NamedTemporaryFile(delete=False) as tmpF:
-                        shutil.copyfileobj(r,tmpF)
-                with open(tmpF.name, "rb") as f:
-                    hash = hashlib.md5()
-                    while chunk := f.read(8192):
-                        hash.update(chunk)
-
-                ET.SubElement(file, "url").text = zipUrl
-                ET.SubElement(file, "archive_type").text = "zip"
-                ET.SubElement(file, "md5").text = hash.hexdigest()
-                ET.SubElement(file, "size").text = r.info()["Content-Length"]
-                ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
+        # Fetch file and store temporarily to be able to calculate size and checksum
+        d = urllib.request.urlopen(tarUrl)
+        with urllib.request.urlopen(tarUrl) as r:
+            with tempfile.NamedTemporaryFile(delete=False) as tmpF:
+                shutil.copyfileobj(r,tmpF)
+        with open(tmpF.name, "rb") as f:
+                hash = hashlib.md5()
+            while chunk := f.read(8192):
+                hash.update(chunk)
+    
+        ET.SubElement(file, "url").text = fileURL
+        ET.SubElement(file, "archive_type").text = "zip"
+        ET.SubElement(file, "md5").text = hash.hexdigest()
+        ET.SubElement(file, "size").text = d.info()["Content-Length"]
+        ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
 
     terms = ET.SubElement(release, "terms")
     term = ET.SubElement(terms, "term")
