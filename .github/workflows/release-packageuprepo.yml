@@ -26,10 +26,16 @@ jobs:
           rm -r -f .github
           ls *
 
-      - name: Create zip and tar.gz
+      - name: Rename project folder
         run: |
           cd ..
+          echo "test"
+          ls -d * 
+          mv ${{ github.event.repository.name }} nihod5
+          echo "test after rename"
           ls -d *
+       
+          
       # Maybe needed in the future
       #
       # - name: Install dependencies
