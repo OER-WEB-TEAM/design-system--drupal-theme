@@ -26,11 +26,11 @@ jobs:
           rm -r -f .git
         
       - name: Create zip file
-        run: zip -r nihod5-v$GITHUB_REF_NAME.zip .
+        run: zip -r nihod5-v$GITHUB_REF_NAME.zip nihod5
 
       - name: Create tar and gzip
         run: |
-          tar -czf nihod5-v$GITHUB_REF_NAME.tar.gz .
+          tar -czf nihod5-v$GITHUB_REF_NAME.tar.gz nihod5
 
       - name: Add assets to the release
         uses: softprops/action-gh-release@v1
