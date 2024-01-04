@@ -72,6 +72,9 @@ for x in range(len(data_json)):
 
         # Fetch file and store temporarily to be able to calculate size and checksum
         d = urllib.request.urlopen(fileURL)
+        print("file info")
+        print(fileURL)
+        print(d.info())
         with urllib.request.urlopen(fileURL) as r:
             with tempfile.NamedTemporaryFile(delete=False) as tmpF:
                 shutil.copyfileobj(r,tmpF)
