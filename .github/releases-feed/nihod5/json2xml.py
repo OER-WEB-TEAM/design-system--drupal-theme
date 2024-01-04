@@ -65,6 +65,11 @@ for x in range(len(data_json)):
 
                 # Fetch file and store temporarily to be able to calculate size and checksum
                 d = urllib.request.urlopen(tarUrl)
+                print("tar info")
+                print(d.info())
+                print("quindi")
+                print(d.info()["Content-Length"])
+                
                 with urllib.request.urlopen(tarUrl) as r:
                     with tempfile.NamedTemporaryFile(delete=False) as tmpF:
                         shutil.copyfileobj(r,tmpF)
@@ -80,6 +85,11 @@ for x in range(len(data_json)):
                 ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
             case 1:
                 zipUrl = data_json[x]["zipball_url"]
+                d = urllib.request.urlopen(zipUrl)
+                print("tar info")
+                print(d.info())
+                print("quindi")
+                print(d.info()["Content-Length"])
 
                 # Fetch file and store temporarily to be able to calculate size and checksum
                 d = urllib.request.urlopen(zipUrl)
