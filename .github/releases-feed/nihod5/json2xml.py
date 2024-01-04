@@ -16,12 +16,13 @@ root.set("xmlns:dc","http://purl.org/dc/elements/1.1/")
 
 # Version numbers
 vArray = data_json[0]["name"].split(".")
+supported = vArray[0] + "." + vArray[1] - 1 + ".," + vArray[0] + "." + vArray[1] + "."
 
 ET.SubElement(root, "title").text = "NIHOD5"
 ET.SubElement(root, "short_name").text = "NIHOD5"
 ET.SubElement(root, "dc:creator").text = "AlexVanK"
 ET.SubElement(root, "type").text = "project_theme"
-ET.SubElement(root, "supported_branches").text = "1.0.,1.1.,1.2.,1.3."
+ET.SubElement(root, "supported_branches").text = supported
 ET.SubElement(root, "project_status").text = "published"
 ET.SubElement(root, "link").text = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme"
 
