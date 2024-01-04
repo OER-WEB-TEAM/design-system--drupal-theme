@@ -21,15 +21,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Delete .github folder
-        run: rm -r -f .github
-
+        run: |
+          rm -r -f .github
+          rm -r -f .git
+        
       - name: Create zip file
         run: zip -r nihod5-v$GITHUB_REF_NAME.zip .
 
       - name: Create tar and gzip
         run: |
-          tar -cf nihod5-v$GITHUB_REF_NAME.tar .
-          tar -czf nihod5-v$GITHUB_REF_NAME.tar.gz nihod5-v$GITHUB_REF_NAME.tar
+          tar -czf nihod5-v$GITHUB_REF_NAME.tar.gz .
 
       - name: Add assets to the release
         uses: softprops/action-gh-release@v1
