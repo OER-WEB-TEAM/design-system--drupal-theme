@@ -63,21 +63,12 @@ for x in range(len(data_json)):
     # Write files information
     # This will have to come from the assets array (see api1)
     files = ET.SubElement(release, "files")
-    for y in range(2):
+    for y in range(len(data_json[x]["assets"])):
         file = ET.SubElement(files,"file")
-        match y:
-            case 0:
-                fileURL = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/" + fullVersion + ".tar.gz"
-                fileType = "tar.gz"
-            case 1:
-                fileURL = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/" + fullVersion + ".zip"
-                fileType = "zip"
+        fileURL = data_json[x]["assets"][y]["browser_download_url"]
+        fileType = "tar.gz" if data_json[x]["assets"][y]["content_type"] else "zip"
 
-        # Fetch file and store temporarily to be able to calculate size and checksum
-        d = urllib.request.urlopen(fileURL)
-        print("file info")
-        print(fileURL)
-        print(d.info())
+        # Fetch file and store temporarily to be able to calculate checksum
         with urllib.request.urlopen(fileURL) as r:
             with tempfile.NamedTemporaryFile(delete=False) as tmpF:
                 shutil.copyfileobj(r,tmpF)
@@ -89,7 +80,7 @@ for x in range(len(data_json)):
         ET.SubElement(file, "url").text = fileURL
         ET.SubElement(file, "archive_type").text = fileType
         ET.SubElement(file, "md5").text = hash.hexdigest()
-        ET.SubElement(file, "size").text = d.info()["Content-Length"]
+        ET.SubElement(file, "size").text = data_json[x]["assets"][y]["size"]
         ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
 
     terms = ET.SubElement(release, "terms")
