@@ -1,5 +1,7 @@
 # This workflows creates deployable binaries suitable for Drupal updates
 
+# The variable ${{github.ref_name}} contains the tag if the workflow was triggered on release
+# @see: https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
 name: Release | Package Up repository
 
 on:
@@ -21,9 +23,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set version variable
-        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-
       - name: Delete .github folder
         run: |
           rm -r -f .github
@@ -31,6 +30,12 @@ jobs:
       - name: Create zip file
         run: |
           zip -r nihod5-v$GITHUB_REF_NAME.zip .
+          ls -d *
+
+      - name: Create tar and gzip
+        run: |
+          tar -cf nihod5-v$GITHUB_REF_NAME.tar .
+          tar -czf nihod5-v$GITHUB_REF_NAME.tar.gz
           ls -d *
        
           
