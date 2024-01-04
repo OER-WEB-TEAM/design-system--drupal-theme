@@ -26,6 +26,10 @@ jobs:
           rm -r -f .github
           ls *
 
+      - name: Create zip and tar.gz
+        run: |
+          cd ..
+          ls *
       # Maybe needed in the future
       #
       # - name: Install dependencies
