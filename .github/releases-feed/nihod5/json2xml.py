@@ -58,7 +58,6 @@ for x in range(len(data_json)):
     # Write files information
     files = ET.SubElement(release, "files")
     for y in range(2):
-        print(y)
         file = ET.SubElement(files,"file")
         match y:
             case 0:
@@ -66,6 +65,9 @@ for x in range(len(data_json)):
 
                 # Fetch file and store temporarily to be able to calculate size and checksum
                 with urllib.request.urlopen(tarUrl) as r:
+                    print(r)
+                    print(r.info())
+                    print(r.info()["Content-Length"])
                     with tempfile.NamedTemporaryFile(delete=False) as tmpF:
                         shutil.copyfileobj(r,tmpF)
                 with open(tmpF.name, "rb") as f:
@@ -73,7 +75,7 @@ for x in range(len(data_json)):
                     while chunk := f.read(8192):
                         hash.update(chunk)
 
-                print(r.info()["Content-Length"])
+                
                         
                 ET.SubElement(file, "url").text = tarUrl
                 ET.SubElement(file, "archive_type").text = "tar.gz"
