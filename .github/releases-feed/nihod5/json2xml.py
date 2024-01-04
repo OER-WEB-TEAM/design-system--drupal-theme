@@ -104,7 +104,7 @@ for x in range(len(data_json)):
         elif currentRelease__versionIndexes[2] > previousRelease_versionIndexes[2]:
             release_type = "Bug fixes"
 
-    ET.SubElement(term, "name").text = "Release Type"
+    ET.SubElement(term, "name").text = "Release type"
     ET.SubElement(term, "value").text = release_type
 
     # Write security advisory (perhaps not necessary for custom themes)
