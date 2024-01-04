@@ -86,7 +86,7 @@ for x in range(len(data_json)):
             case 1:
                 zipUrl = data_json[x]["zipball_url"]
                 d = urllib.request.urlopen(zipUrl)
-                print("tar info")
+                print("zip info")
                 print(d.info())
                 print("quindi")
                 print(d.info()["Content-Length"])
