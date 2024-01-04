@@ -1,11 +1,12 @@
 # Docs
 # @see: https://www.python-engineer.com/posts/run-python-github-actions/
 # @see: https://github.com/actions/checkout
+# @see: https://stackoverflow.com/questions/59319281/github-action-different-between-release-created-and-published
 name: Release Feed | JSON to XML converter
 
 on:
-  push:
-    branches: [5.x.x]
+  release:
+    types: [published]
 
 jobs:
   run-script:
@@ -27,8 +28,12 @@ jobs:
           python-version: '3.11'
 
       # Maybe needed in the future
+      #
       # - name: Install dependencies
-      #  run: pip install -r requirements.txt
+      #   run: pip install -r requirements.txt
+      #
+      # not needed for now as every library needed
+      # in the script already comes with Python
 
       - name: Run script
         run: python json2xml.py
