@@ -46,15 +46,15 @@ releases = ET.SubElement(root, "releases")
 
 for x in range(len(data_json)):
     release = ET.SubElement(releases, "release")
-    fullVersion = data_json[x]["name"]
+    fullVersion = data_json[x]["tag_name"]
     
     # Write release meta data
-    ET.SubElement(release, "name").text = "NIHOD5 " + fullVersion
+    ET.SubElement(release, "name").text = data_json[x]["name"]
     ET.SubElement(release, "version").text = fullVersion
     ET.SubElement(release, "tag").text = fullVersion
     ET.SubElement(release, "status").text = "published"
     ET.SubElement(release, "release_link").text = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/releases/" + fullVersion
-    ET.SubElement(release, "download_link").text = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/" + fullVersion + ".tar.gz"
+    ET.SubElement(release, "download_link").text = data_json[x]["assets"][0]["browser_download_url"]
 
     new_time = data_json[x]["published_at"]
     timestamp = datetime.datetime.strptime(new_time, "%Y-%m-%dt%H:%M:%S%z").timestamp()
@@ -80,7 +80,7 @@ for x in range(len(data_json)):
         ET.SubElement(file, "url").text = fileURL
         ET.SubElement(file, "archive_type").text = fileType
         ET.SubElement(file, "md5").text = hash.hexdigest()
-        ET.SubElement(file, "size").text = data_json[x]["assets"][y]["size"]
+        ET.SubElement(file, "size").text = str(data_json[x]["assets"][y]["size"])
 
         # Force filedate to be the same as repo publishing date
         # Technically this is not accurate as the file is generated sligthly later by another worfklow
