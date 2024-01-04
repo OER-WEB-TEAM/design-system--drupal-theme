@@ -7,7 +7,7 @@ import json, datetime, tempfile, shutil, urllib.request, hashlib
 api1 = "https://api.github.com/repos/OER-WEB-TEAM/design-system--drupal-theme/releases"
 api2 = "https://api.github.com/repos/OER-WEB-TEAM/design-system--drupal-theme/tags"
 
-response = urlopen(api2)
+response = urlopen(api1)
 data_json = json.loads(response.read())
 
 # Build XML tree
@@ -15,7 +15,7 @@ root = ET.Element("project")
 root.set("xmlns:dc","http://purl.org/dc/elements/1.1/")
 
 # Version numbers
-vArray = data_json[0]["tag_name"].split(".")
+vArray = data_json[0]["name"].split(".")
 
 ET.SubElement(root, "title").text = "NIHOD5"
 ET.SubElement(root, "short_name").text = "NIHOD5"
@@ -55,7 +55,7 @@ for x in range(len(data_json)):
     ET.SubElement(release, "release_link").text = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/releases/tag/" + fullVersion
     ET.SubElement(release, "download_link").text = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/" + fullVersion + ".tar.gz"
 
-    new_time = data_json[2]["published_at"]
+    new_time = data_json[x]["published_at"]
     timestamp = datetime.datetime.strptime(new_time, "%Y-%m-%dt%H:%M:%S%z").timestamp()
     ET.SubElement(release, "date").text = str(timestamp).split(".")[0]
 
