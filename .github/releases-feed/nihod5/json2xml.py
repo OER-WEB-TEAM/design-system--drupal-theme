@@ -20,6 +20,7 @@ vArray = data_json[0]["tag_name"].split(".")
 # Support only last three minor versions
 # NOTE: when major version changes we'll have to use another workflow
 minorIndex = int(vArray[1])
+supported = ""
 for x in range(3 if minorIndex > 2 else minorIndex):
     delimiter = ".," if x != 2 else "."
     supported += vArray[0] + "." + vArray[1] + delimiter
