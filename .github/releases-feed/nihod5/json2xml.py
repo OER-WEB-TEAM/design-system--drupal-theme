@@ -66,9 +66,11 @@ for x in range(len(data_json)):
         file = ET.SubElement(files,"file")
         match y:
             case 0:
-                fileURL = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/" + fullVersion + ".tar.gz"
+                fileURL = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/" + fullVersion + ".tar.gz"'
+                fileType = "tar.gz"
             case 1:
                 fileURL = "https://github.com/OER-WEB-TEAM/design-system--drupal-theme/archive/refs/tags/" + fullVersion + ".zip"
+                fileType = "zip"
 
         # Fetch file and store temporarily to be able to calculate size and checksum
         d = urllib.request.urlopen(fileURL)
@@ -84,7 +86,7 @@ for x in range(len(data_json)):
                 hash.update(chunk)
     
         ET.SubElement(file, "url").text = fileURL
-        ET.SubElement(file, "archive_type").text = "zip"
+        ET.SubElement(file, "archive_type").text = fileType
         ET.SubElement(file, "md5").text = hash.hexdigest()
         ET.SubElement(file, "size").text = d.info()["Content-Length"]
         ET.SubElement(file, "filedate").text = str(timestamp).split(".")[0]
