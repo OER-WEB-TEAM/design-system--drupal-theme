@@ -21,10 +21,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set version variable
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
       - name: Delete .github folder
         run: |
           rm -r -f .github
-          ls *
 
       - name: Rename project folder
         run: |
@@ -33,7 +35,8 @@ jobs:
 
       - name: Create zip and tar.gz
         run: |
-          zip nihod5-v${{  github.ref_name }}.zip nihod5
+          ls -d *
+          zip nihod5-v${{ env.RELEASE_VERSION }}.zip nihod5
           ls -d *
        
           
