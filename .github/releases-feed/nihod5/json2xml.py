@@ -66,8 +66,8 @@ for x in range(len(data_json)):
                 fileURL = data_json[x]["zipball_url"]
 
         # Fetch file and store temporarily to be able to calculate size and checksum
-        d = urllib.request.urlopen(tarUrl)
-        with urllib.request.urlopen(tarUrl) as r:
+        d = urllib.request.urlopen(fileURL)
+        with urllib.request.urlopen(fileURL) as r:
             with tempfile.NamedTemporaryFile(delete=False) as tmpF:
                 shutil.copyfileobj(r,tmpF)
         with open(tmpF.name, "rb") as f:
