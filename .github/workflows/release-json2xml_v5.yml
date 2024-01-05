@@ -1,11 +1,17 @@
 # Docs
 # @see: https://www.python-engineer.com/posts/run-python-github-actions/
 # @see: https://github.com/actions/checkout
-name: Release Feed | JSON to XML converter
+# @see: https://stackoverflow.com/questions/59319281/github-action-different-between-release-created-and-published
+
+# This workflow converts the JSON /releases api response into XML format suitable for Drupal update checker
+# Note that this workflow should only run if the addassets.yml workflow is done
+name: Release | API feed JSON to XML converter
 
 on:
-  push:
-    branches: [5.x.x]
+  workflow_run:
+    workflows: ["Release | Add Assets"]
+    types:
+      - completed
 
 jobs:
   run-script:
@@ -13,7 +19,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: .github
+        working-directory: .github/releases-feed/nihod5
     
     steps:
       - name: Checkout repository
@@ -27,11 +33,15 @@ jobs:
           python-version: '3.11'
 
       # Maybe needed in the future
+      #
       # - name: Install dependencies
-      #  run: pip install -r requirements.txt
+      #   run: pip install -r requirements.txt
+      #
+      # not needed for now as every library needed
+      # in the script already comes with Python
 
       - name: Run script
-        run: python releases-feed/nihod5/json2xml.py
+        run: python json2xml.py
 
       - name: Commit changes
         run: |
@@ -44,4 +54,4 @@ jobs:
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main 
+          branch: 5.x.x 

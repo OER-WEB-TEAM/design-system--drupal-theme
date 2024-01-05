@@ -1,0 +1,43 @@
+# This workflows creates deployable binaries suitable for Drupal updates
+
+# The variable ${{github.ref_name}} contains the tag if the workflow was triggered on release
+# @see: https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
+name: Release | Add Assets
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    #defaults:
+    #  run:
+    #    working-directory: .github/releases-feed/nihod5
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Delete .github folder
+        run: |
+          rm -r -f .github
+          rm -r -f .git
+        
+      - name: Create zip file
+        run: |
+          rsync -Rr . ./nihod5/
+          zip -r nihod5-v$GITHUB_REF_NAME.zip nihod5
+
+      - name: Create gzip file
+        run: |
+          tar -czf nihod5-v$GITHUB_REF_NAME.tar.gz nihod5
+
+      - name: Add assets to the release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            *.zip
+            *.tar.gz
+
