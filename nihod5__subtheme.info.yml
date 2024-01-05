@@ -1,6 +1,6 @@
-name: 'NIH OD 5 - Subtheme'
+name: 'NIHOD5 - Subtheme'
 type: theme
-description: 'This is a subtheme of NIH OD 5 theme'
+description: 'This is a subtheme of NIHOD5 theme. Through this boilerplate you can start customizing your website without having to worry about updates in the design system.'
 core_version_requirement: '^9.4 || ^10'
 'base theme': nihod5
 libraries:
