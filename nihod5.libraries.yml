@@ -12,8 +12,26 @@ bootstrapIcons:
   version: 1.11.1
   css:
     theme:
-      //cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css:
-        { type: external, minified: true }
+      //cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css: { type: external, minified: true }
+
+bootstrapTables:
+  version: 1.22.1
+  header: true
+  licence:
+    name: MIT
+    url: https://github.com/wenzhixin/bootstrap-table/blob/develop/LICENSE
+    gpl-compatible: false
+  css:
+    theme:
+      https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css: { type: external, minified: true }
+      https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.css: { type: external, minified: true }
+  js:
+    https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js: { type: external, minified: true }
+    https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js: { type: external, minified: true }
+    https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.27.0/tableExport.min.js: { type: external, minified: true }
+    https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery 
 
 colorMode:
   css:

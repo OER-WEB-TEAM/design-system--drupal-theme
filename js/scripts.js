@@ -151,4 +151,44 @@
     },
   };
 
+  Drupal.behaviors.bootstrapTable = {
+    attach: function (context) {
+
+      once("helper__bsTable", "[data-toggle='table']", document.body).forEach((table) => {
+        //const tableAccent = table.querySelector("thead").getAttribute("class").split("-")[1];
+        const thresh = 1120;
+        let card = false;
+
+        // Initialize the table as jQuery element
+        // Unfortunately this is still needed as the plugin requires jQuery
+        // @see: https://github.com/wenzhixin/bootstrap-table/issues/4796
+        let $table = jQuery(table);
+
+        // Localizations
+        $table.bootstrapTable({
+          formatSearch: () => "Keyword filter"
+        })
+
+        // Automatically handles responsive table layout
+        jQuery(window).on("resize", () => {
+          let w = window.innerWidth;
+          console.log(w, card);
+          if (w < thresh && !card) {
+            $table.bootstrapTable("toggleView");
+            card = true;
+          } else if (w >= thresh && card) {
+            $table.bootstrapTable("toggleView");
+            card = false;
+          }
+        });
+
+        // Automatically set table/card view on page load
+        if (window.innerWidth < 1120 && !card) {
+          $table.bootstrapTable("toggleView");
+          card = true;
+        }
+      });
+    },
+  };
+
 })(Drupal);

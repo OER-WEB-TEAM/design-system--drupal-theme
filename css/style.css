@@ -14114,3 +14114,12 @@ ul.process-list > li::after {
   width: calc(var(--orderedbulletsize) / 2);
   background: #000;
 }
+
+[data-toggle=table] th {
+  vertical-align: top !important;
+}
+
+[data-toggle=table] .filter-control {
+  margin: 0.75rem;
+  margin-top: 0;
+}
