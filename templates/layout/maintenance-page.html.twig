@@ -1,0 +1,81 @@
+{#
+/**
+ * @file
+ * Theme override to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ * Some may be blank but they are provided for consistency.
+ *
+ * @see template_preprocess_maintenance_page()
+ */
+#}
+<div class="layout-container d-flex flex-column justify-content-center align-items-center h-100">
+
+  <main role="main">
+    <table>
+      <tbody>
+        <tr>
+          <td></td>
+          <td>
+            <div class="navbar-brand d-flex align-items-center mb-5">
+
+              <div class="site-logo d-block border-end pe-1 me-3">
+                <img src="/themes/nihod5__subtheme--test/logo.svg" alt="Home" class="d-none d-lg-block">
+                <img src="/themes/nihod5/img/nihmark.png" class="d-block d-lg-none">
+              </div>
+              
+              <div>
+                <span class="site-title text-capitalize fw-semibold text-primary d-none d-lg-block">
+                  Design System
+                </span>
+                <a href="/" title="Home" rel="home" class="site-title text-capitalize fw-semibold text-primary fs-5 d-block d-lg-none">
+                  Design System
+                </a>
+              </div>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="pe-3" style="vertical-align: top;">
+            <i class="bi bi-tools h1"></i>
+          </td>
+          <td>
+            <h1 class="d-inline-block mb-4">
+              <strong>Maintenance Mode</strong>
+            </h1>
+            <p>We'll be back soon!</p>
+
+            <p>Sorry for the inconvenience but this site is undergoing (scheduled) maintenance. Thanks for your patience.</p>
+
+            <p class="mb-5">{{ page.content }}</p>
+
+            <a href="mailto:OERWebmaster03@od.nih.gov" class="btn btn-outline-primary btn-lg fs-6 rounded-1 px-4 ms-0">E-mail OER Webmaster</a>
+
+            <small class="d-block mt-5 opacity-75" style="font-family: monospace">{{ title }}</small>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+
+  {% if page.sidebar_first %}
+    <aside class="layout-sidebar-first" role="complementary">
+      {{ page.sidebar_first }}
+    </aside>{# /.layout-sidebar-first #}
+  {% endif %}
+
+  {% if page.sidebar_second %}
+    <aside class="layout-sidebar-second" role="complementary">
+      {{ page.sidebar_second }}
+    </aside>{# /.layout-sidebar-second #}
+  {% endif %}
+
+  {% if page.footer %}
+    <footer role="contentinfo">
+      {{ page.footer }}
+    </footer>
+  {% endif %}
+
+</div>{# /.layout-container #}

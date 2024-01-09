@@ -167,6 +167,11 @@
         // Localizations
         $table.bootstrapTable({
           formatSearch: () => "Keyword filter"
+        });
+
+        // Default Classess (this removes the table-hover which is unwanted)
+        $table.bootstrapTable('refreshOptions', {
+          classes: $table.attr("class").replace("table-hover", "")
         })
 
         // Automatically handles responsive table layout
