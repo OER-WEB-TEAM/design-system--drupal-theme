@@ -74,9 +74,12 @@
 
         // Then have browser remember new dismissed alerts
         closeButton.addEventListener("click", (e) => {
-          if (e.target.getAttribute("data-dismiss-for") === "good")
-            localStorage.setItem(id, true);
-          else sessionStorage.setItem(id, true);
+          var howlong = e.target.getAttribute("data-dismiss-for");
+          if (howlong) {
+            if (howlong === "good")
+              localStorage.setItem(id, true);
+            else sessionStorage.setItem(id, true);
+          }
         });
       });
     },
@@ -151,6 +154,15 @@
     },
   };
 
+  Drupal.behaviors.redirectBanner = {
+    attach: function (context) {
+      once("helper__anchorLink", "#redirect-banner", document.body).forEach((redirBanner) => {
+        let redirect = window.location.href.includes("redirected");
+        if (redirect) redirBanner.classList.remove("d-none");
+      });
+    },
+  };
+
   Drupal.behaviors.bootstrapTable = {
     attach: function (context) {
 
@@ -195,5 +207,11 @@
       });
     },
   };
+
+  Drupal.behaviors.tooltips = {
+    attach: function (context) {
+      once("helper__bsTable", "[data-bs-toggle='tooltip']", document.body).forEach((tooltip) => new bootstrap.Tooltip(tooltip))
+    }
+  }
 
 })(Drupal);

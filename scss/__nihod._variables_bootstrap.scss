@@ -144,3 +144,11 @@ $table-cell-padding-x: .75rem;
 $table-bg-scale: 0;
 $table-striped-bg-factor: .075;
 $table-striped-bg: rgba(var(--#{$prefix}emphasis-color-rgb), $table-striped-bg-factor);
+
+
+// *
+// * 
+// TOOLTIP
+$tooltip-border-radius: 3px;
+$tooltip-padding-y: 1em * .75;
+$tooltip-padding-x: 1em;
