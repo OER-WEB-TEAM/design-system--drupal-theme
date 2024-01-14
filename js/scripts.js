@@ -158,7 +158,10 @@
     attach: function (context) {
       once("helper__anchorLink", "#redirect-banner", document.body).forEach((redirBanner) => {
         let redirect = window.location.href.includes("redirected");
-        if (redirect) redirBanner.classList.remove("d-none");
+        if (redirect) {
+          redirBanner.classList.remove("d-none")
+          window.history.replaceState({}, "", window.location.href.split("?")[0]);
+        }
       });
     },
   };

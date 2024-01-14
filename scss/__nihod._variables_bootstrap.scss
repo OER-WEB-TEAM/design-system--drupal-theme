@@ -149,6 +149,8 @@ $table-striped-bg: rgba(var(--#{$prefix}emphasis-color-rgb), $table-striped-bg-f
 // *
 // * 
 // TOOLTIP
-$tooltip-border-radius: 3px;
+$tooltip-border-radius: 0.375em;
 $tooltip-padding-y: 1em * .75;
 $tooltip-padding-x: 1em;
+$tooltip-bg: $gray-800;
+$tooltip-opacity: 1;

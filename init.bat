@@ -1,5 +1,12 @@
-:: Do not print commands - this would be confusing
+:: Suppress any warnings
+cls
+
+:: Do not print commands, this would be confusing
 @ECHO OFF
+
+:: Check path location of .bat caller
+:: If remote - mount location to a temporary driver letter
+IF "%CD%"=="C:\Windows" (pushd %~dp0)
 
 :: Check if subtheme exists in parent folder, if not
 :: 1 - Download subtheme from major version related branch
@@ -16,5 +23,9 @@ IF EXIST ..\nihod5__subtheme (
 	move nihod5__subtheme ..
 	del nihod5__subtheme.zip
 )
+
+:: Check path location of .bat caller
+:: If remote - unmount previousy mounted drive letter
+IF "%CD%"=="C:\Windows" (popd)
 
 pause
