@@ -7,11 +7,11 @@
 # Note that this workflow should only run if the addassets.yml workflow is done
 name: Release | API feed JSON to XML converter
 
-on:
-  workflow_run:
-    workflows: ["Release | Add Assets"]
-    types:
-      - completed
+on: workflow_dispatch
+  #workflow_run:
+  #  workflows: ["Release | Add Assets"]
+  #  types:
+  #    - completed
 
 jobs:
   run-script:
