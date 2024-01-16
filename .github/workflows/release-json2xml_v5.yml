@@ -9,7 +9,7 @@ name: Release | API feed JSON to XML converter
 
 # Use the following trigger to run worfklow manually (only needed to debug)
 # on: workflow_dispatch
-on: workflow_dispatch
+on:
   workflow_run:
     workflows: ["Release | Add Assets"]
     types:
