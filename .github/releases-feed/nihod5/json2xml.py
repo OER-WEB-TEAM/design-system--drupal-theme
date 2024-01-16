@@ -23,7 +23,7 @@ minorIndex = int(vArray[1])
 supported = ""
 for x in range(3 if minorIndex > 2 else minorIndex):
     delimiter = ".," if x != 2 else "."
-    supported += vArray[0] + "." + (vArray[x] + 1) + delimiter
+    supported += vArray[0] + "." + str(int(vArray[x]) + 1)) + delimiter
 
 ET.SubElement(root, "title").text = "NIHOD5"
 ET.SubElement(root, "short_name").text = "NIHOD5"
