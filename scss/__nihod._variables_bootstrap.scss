@@ -55,7 +55,7 @@ $dark: $gray-900;
 
 // *
 // *
-// SPACING CLASSES
+// BORDER UTILITIES
 $border-width: 1px;
 $border-widths: (
   1: 1px,
@@ -63,9 +63,22 @@ $border-widths: (
   3: 3px,
   4: 4px,
   5: 5px,
-  6: 6px,
-  7: 7px,
-  8: 8px
+  6: 6px
+);
+
+
+// *
+// *
+// SPACING UTILITIES
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4.5
 );
 
 
