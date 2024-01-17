@@ -945,12 +945,12 @@ progress {
 
 .g-6,
 .gx-6 {
-  --bs-gutter-x: 4.5rem;
+  --bs-gutter-x: 4rem;
 }
 
 .g-6,
 .gy-6 {
-  --bs-gutter-y: 4.5rem;
+  --bs-gutter-y: 4rem;
 }
 
 @media (min-width: 576px) {
@@ -1168,12 +1168,12 @@ progress {
 
   .g-sm-6,
 .gx-sm-6 {
-    --bs-gutter-x: 4.5rem;
+    --bs-gutter-x: 4rem;
   }
 
   .g-sm-6,
 .gy-sm-6 {
-    --bs-gutter-y: 4.5rem;
+    --bs-gutter-y: 4rem;
   }
 }
 @media (min-width: 768px) {
@@ -1391,12 +1391,12 @@ progress {
 
   .g-md-6,
 .gx-md-6 {
-    --bs-gutter-x: 4.5rem;
+    --bs-gutter-x: 4rem;
   }
 
   .g-md-6,
 .gy-md-6 {
-    --bs-gutter-y: 4.5rem;
+    --bs-gutter-y: 4rem;
   }
 }
 @media (min-width: 992px) {
@@ -1614,12 +1614,12 @@ progress {
 
   .g-lg-6,
 .gx-lg-6 {
-    --bs-gutter-x: 4.5rem;
+    --bs-gutter-x: 4rem;
   }
 
   .g-lg-6,
 .gy-lg-6 {
-    --bs-gutter-y: 4.5rem;
+    --bs-gutter-y: 4rem;
   }
 }
 @media (min-width: 1200px) {
@@ -1837,12 +1837,12 @@ progress {
 
   .g-xl-6,
 .gx-xl-6 {
-    --bs-gutter-x: 4.5rem;
+    --bs-gutter-x: 4rem;
   }
 
   .g-xl-6,
 .gy-xl-6 {
-    --bs-gutter-y: 4.5rem;
+    --bs-gutter-y: 4rem;
   }
 }
 @media (min-width: 1400px) {
@@ -2060,12 +2060,12 @@ progress {
 
   .g-xxl-6,
 .gx-xxl-6 {
-    --bs-gutter-x: 4.5rem;
+    --bs-gutter-x: 4rem;
   }
 
   .g-xxl-6,
 .gy-xxl-6 {
-    --bs-gutter-y: 4.5rem;
+    --bs-gutter-y: 4rem;
   }
 }
 .table {
