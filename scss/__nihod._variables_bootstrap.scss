@@ -84,6 +84,21 @@ $spacers: (
 
 // *
 // *
+// GUTTER UTILITIES (for flex)
+$grid-gutter-width: 1.5rem;
+$gutters: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4,
+);
+
+
+// *
+// *
 // ACCORDION
 $accordion-button-icon: url("../img/accordion-add.svg");
 $accordion-button-active-icon: url("../img/accordion-remove.svg");
