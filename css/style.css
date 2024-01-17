@@ -5100,7 +5100,7 @@ textarea.form-control-lg {
   --bs-alert-margin-bottom: 1rem;
   --bs-alert-color: inherit;
   --bs-alert-border-color: transparent;
-  --bs-alert-border: 0 solid var(--bs-alert-border-color);
+  --bs-alert-border: 0.45em solid var(--bs-alert-border-color);
   --bs-alert-border-radius: var(--bs-border-radius);
   --bs-alert-link-color: inherit;
   position: relative;
