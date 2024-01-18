@@ -17,3 +17,11 @@ function nihod5_preprocess_breadcrumb(&$variables) {
   }
   $variables['#cache']['contexts'][] = 'url';
 }
+
+
+/**
+/**
+/** ADD EXTRA VARIABLES TO TWIG **/
+function nihod5_preprocess_page(&$variables) {
+  $variables['site_name'] = \Drupal::config('system.site')->get('name');
+}
