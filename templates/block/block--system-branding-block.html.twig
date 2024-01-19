@@ -17,7 +17,7 @@
 <div class="navbar-brand d-flex align-items-center">
 
   {% if site_logo %}
-  <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-logo d-block border-end pe-1 me-3">
+  <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-logo d-block">
     <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="d-none d-lg-block" />
     <img src="/themes/nihod5/img/nihmark.png" class="d-block d-lg-none" />
   </a>
@@ -25,7 +25,7 @@
 
   <div>
     {% if site_name %}
-    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-title text-capitalize fw-semibold text-primary d-none d-lg-block">
+    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-title text-capitalize fw-semibold text-primary d-none d-lg-block border-start ps-3 ms-3">
       {{ site_name }}
     </a>
     <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-title text-capitalize fw-semibold text-primary fs-5 d-block d-lg-none">
