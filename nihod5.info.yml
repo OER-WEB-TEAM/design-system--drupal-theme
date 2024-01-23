@@ -13,7 +13,7 @@ description: "NIH OD Styleguide Drupal theme.
   </ul>
   <b>Creating a subtheme is highly recommended as it will prevent any updates from wiping your customizations.</b>"
 
-version: 1.2.1
+version: 1.2.2
 project: nihod5
 project status url: https://raw.githubusercontent.com/OER-WEB-TEAM/design-system--drupal-theme/5.x.x/.github/releases-feed
 
