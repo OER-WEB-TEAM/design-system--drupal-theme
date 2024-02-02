@@ -31,9 +31,4 @@ bootstrapTables:
     https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.27.0/tableExport.min.js: { type: external, minified: true }
     https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js: { type: external, minified: true }
   dependencies:
-    - core/jquery 
-
-colorMode:
-  css:
-  js:
-    js/colormode.js: {}
+    - core/jquery
