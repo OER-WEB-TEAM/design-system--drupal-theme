@@ -67,7 +67,7 @@ set footer_classes = ' ' ~
 #}
 
 {% include([
-  '/themes/'~ active_theme.name ~ '/templates/__includes/header.html.twig',
+  '/' ~ directory ~ '/templates/__includes/header.html.twig',
   '@nihod5/__includes/header.html.twig'
 ]) %}
 
@@ -105,7 +105,7 @@ set footer_classes = ' ' ~
 
 {% if page.footer %}
   {% include([
-    '/themes/'~ active_theme.name ~ '/templates/__includes/footer.html.twig',
+    '/' ~ directory ~ '/templates/__includes/footer.html.twig',
     '@nihod5/__includes/footer.html.twig'
   ]) %}
 {% endif %}
