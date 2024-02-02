@@ -59,7 +59,18 @@ set footer_classes = ' ' ~
 
 {% include '@nihod5/__includes/uswds_topbanner.html.twig' %}
 
-{% include '@nihod5/__includes/header.html.twig' %}
+{#
+  Include files don't follow the template suggestion mechanism of Drupal, so they
+    cannot be directyl overwritten.
+  The following trick allows to load include twig files from the active theme.
+  The array provides two entries, the first one that finds a file gets loaded,
+    this is a fall-back mechanism in case the subtheme doesn't load a customized include file
+#}
+
+{% include([
+  '/themes/'~ active_theme.name ~ '/templates/__includes/header.html.twig',
+  '@nihod5/__includes/header.html.twig'
+]) %}
 
 <main role="main">
   <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
@@ -101,5 +112,8 @@ set footer_classes = ' ' ~
 </main>
 
 {% if page.footer %}
-  {% include '@nihod5/__includes/footer.html.twig' %}
+  {% include([
+    '/themes/'~ active_theme.name ~ '/templates/__includes/footer.html.twig',
+    '@nihod5/__includes/footer.html.twig'
+  ]) %}
 {% endif %}
