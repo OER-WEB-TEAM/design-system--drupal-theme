@@ -24,5 +24,4 @@ function nihod5_preprocess_breadcrumb(&$variables) {
 /** ADD EXTRA VARIABLES TO TWIG **/
 function nihod5_preprocess_page(&$variables) {
   $variables['site_name'] = \Drupal::config('system.site')->get('name');
-  $variables['active_theme'] = \Drupal::service('theme.manager')->getActiveTheme();
 }

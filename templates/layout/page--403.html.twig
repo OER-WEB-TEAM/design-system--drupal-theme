@@ -42,25 +42,11 @@
  * @see html.html.twig
  */
 #}
-{%
-set nav_classes = 'navbar navbar-expand-xl' ~
-  (b5_navbar_schema != 'none' ? " navbar-#{b5_navbar_schema}" : ' ') ~
-  (b5_navbar_schema != 'none' ? (b5_navbar_schema == 'dark' ? ' text-light' : ' text-dark' ) : ' ') ~
-  (b5_navbar_bg_schema != 'none' ? " bg-#{b5_navbar_bg_schema}" : ' ')
-%}
-
-{%
-set footer_classes = ' ' ~
-  (b5_footer_schema != 'none' ? " footer-#{b5_footer_schema}" : ' ') ~
-  (b5_footer_schema != 'none' ? (b5_footer_schema == 'dark' ? ' text-light' : ' text-dark' ) : ' ') ~
-  (b5_footer_bg_schema != 'none' ? " bg-#{b5_footer_bg_schema}" : ' ')
-%}
-
 {% include '@nihod5/__includes/uswds_topbanner.html.twig' %}
 
 {#
   Include files don't follow the template suggestion mechanism of Drupal, so they
-    cannot be directyl overwritten.
+    cannot be directly overwritten.
   The following trick allows to load include twig files from the active theme.
   The array provides two entries, the first one that finds a file gets loaded,
     this is a fall-back mechanism in case the subtheme doesn't load a customized include file
