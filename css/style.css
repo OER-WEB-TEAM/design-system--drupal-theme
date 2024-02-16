@@ -94,11 +94,11 @@
   --bs-tertiary-bg: #F0F0F0;
   --bs-tertiary-bg-rgb: 240, 240, 240;
   --bs-heading-color: inherit;
-  --bs-link-color: #20558A;
-  --bs-link-color-rgb: 32, 85, 138;
+  --bs-link-color: #005EA2;
+  --bs-link-color-rgb: 0, 94, 162;
   --bs-link-decoration: underline;
-  --bs-link-hover-color: #1a446e;
-  --bs-link-hover-color-rgb: 26, 68, 110;
+  --bs-link-hover-color: #003861;
+  --bs-link-hover-color-rgb: 0, 56, 97;
   --bs-code-color: #d63384;
   --bs-highlight-color: #212529;
   --bs-highlight-bg: #fff3d3;
@@ -3465,7 +3465,7 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #6F7174;
   --bs-btn-disabled-border-color: transparent;
   --bs-btn-box-shadow: 0 0 0 #000;
-  --bs-btn-focus-shadow-rgb: 65, 111, 156;
+  --bs-btn-focus-shadow-rgb: 38, 118, 176;
   text-decoration: underline;
 }
 .btn-link:focus-visible, button.link:focus-visible {
@@ -7170,8 +7170,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-primary-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-primary:hover, .link-primary:focus {
-  color: RGBA(26, 68, 110, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(26, 68, 110, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(19, 51, 83, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(19, 51, 83, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-secondary {
@@ -7179,8 +7179,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-secondary-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-secondary:hover, .link-secondary:focus {
-  color: RGBA(106, 46, 65, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(106, 46, 65, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(80, 35, 49, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(80, 35, 49, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-success {
@@ -7188,8 +7188,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-success-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-success:hover, .link-success:focus {
-  color: RGBA(109, 181, 129, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(109, 181, 129, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(146, 199, 160, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(146, 199, 160, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-info {
@@ -7197,8 +7197,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-info-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-info:hover, .link-info:focus {
-  color: RGBA(109, 179, 230, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(109, 179, 230, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(146, 198, 236, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(146, 198, 236, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-warning {
@@ -7206,8 +7206,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-warning-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-warning:hover, .link-warning:focus {
-  color: RGBA(255, 207, 77, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(255, 207, 77, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(255, 219, 122, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(255, 219, 122, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-danger {
@@ -7215,8 +7215,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-danger-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-danger:hover, .link-danger:focus {
-  color: RGBA(161, 22, 22, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(161, 22, 22, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(121, 16, 16, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(121, 16, 16, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-light {
@@ -7224,8 +7224,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-light-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-light:hover, .link-light:focus {
-  color: RGBA(243, 243, 243, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(243, 243, 243, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(246, 246, 246, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(246, 246, 246, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-dark {
@@ -7233,8 +7233,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-dark-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-dark:hover, .link-dark:focus {
-  color: RGBA(26, 30, 33, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(26, 30, 33, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(20, 22, 25, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(20, 22, 25, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-body-emphasis {
@@ -13547,11 +13547,11 @@ textarea.form-control-lg {
   }
 }
 .ui-widget-content a {
-  color: #20558A;
+  color: #005EA2;
   text-decoration: underline;
 }
 .ui-widget-content a:hover {
-  color: #1a446e;
+  color: #003861;
 }
 
 .ckeditor-buttons li .cke-icon-only {
@@ -13565,7 +13565,7 @@ textarea.form-control-lg {
 }
 
 button.link {
-  color: #20558A;
+  color: #005EA2;
 }
 
 .button--small {
@@ -14179,11 +14179,11 @@ tr.region-title td {
 }
 
 .views-admin a {
-  color: #20558A;
+  color: #005EA2;
   text-decoration: underline;
 }
 .views-admin a:hover {
-  color: #1a446e;
+  color: #003861;
 }
 .views-admin .views-displays .tabs {
   list-style: none;
@@ -14196,11 +14196,11 @@ tr.region-title td {
   padding: 0.1em 0.5em;
 }
 .views-admin .dropbutton .dropbutton-action .btn-primary {
-  color: #20558A;
+  color: #005EA2;
   text-decoration: underline;
 }
 .views-admin .dropbutton .dropbutton-action .btn-primary:hover {
-  color: #1a446e;
+  color: #003861;
   text-decoration: none;
 }
 .views-admin .view-preview-form .form-item-view-args,

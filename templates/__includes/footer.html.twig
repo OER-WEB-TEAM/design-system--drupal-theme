@@ -1,0 +1,21 @@
+{#
+  This is an include template loaded into page.html.twig
+  and its variations.
+#}
+
+{%
+  set footer_classes = ' ' ~
+    (b5_footer_schema != 'none' ? " footer-#{b5_footer_schema}" : ' ') ~
+    (b5_footer_schema != 'none' ? (b5_footer_schema == 'dark' ? ' text-light' : ' text-dark' ) : ' ') ~
+    (b5_footer_bg_schema != 'none' ? " bg-#{b5_footer_bg_schema}" : ' ')
+%}
+
+<footer class="mt-auto {{ footer_classes }}">
+  <div class="{{ b5_top_container }}">
+    <div class="row">
+      <div class="col px-0">
+        {{ page.footer }}
+      </div>
+    </div>
+  </div>
+</footer>

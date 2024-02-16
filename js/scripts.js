@@ -142,6 +142,7 @@
 
   Drupal.behaviors.anchorLink = {
     attach: function (context) {
+
       if (context.querySelector("article") == null) return;
       // Produce an anchor icon for all the headings with class ".anchor"
       once("helper__anchorLink", ".anchor", document.body).forEach((anchorElement) => {

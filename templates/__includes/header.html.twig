@@ -1,0 +1,47 @@
+{#
+  This is an include template loaded into page.html.twig
+  and its variations.
+#}
+
+{%
+  set nav_classes = 'navbar navbar-expand-lg' ~
+    (b5_navbar_schema != 'none' ? " navbar-#{b5_navbar_schema}" : ' ') ~
+    (b5_navbar_schema != 'none' ? (b5_navbar_schema == 'dark' ? ' text-light' : ' text-dark' ) : ' ') ~
+    (b5_navbar_bg_schema != 'none' ? " bg-#{b5_navbar_bg_schema}" : ' ')
+%}
+
+<header class="shadow border-bottom">
+  {{ page.header }}
+
+  {% if page.nav_branding or page.nav_main or page.nav_additional %}
+  <nav class="{{ nav_classes }}">
+    <div class="{{ b5_top_container }} d-flex">
+      {{ page.nav_branding }}
+
+      <button class="navbar-toggler collapsed py-2 ms-auto me-2" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSearchBar" aria-controls="navbarSearchBar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-search"></i>
+      </button>
+
+      <button class="navbar-toggler collapsed py-2" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-md-end flex-wrap order-1 order-xl-0" id="navbarSupportedContent">
+        <!-- This extra div is needed to prevent collapse animation glitches on padding and margin -->
+        <div class="mt-3 mt-lg-0">
+          {{ page.nav_main }}
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse justify-content-md-end flex-wrap flex-grow-0" id="navbarSearchBar">
+        <!-- This extra div is needed to prevent collapse animation glitches on padding and margin -->
+        <div class="mt-3 mt-lg-0">
+          {{ page.nav_additional }}
+        </div>
+      </div>
+    </div>
+  </nav>
+  {% endif %}
+</header>
