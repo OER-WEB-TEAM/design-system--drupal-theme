@@ -14650,3 +14650,15 @@ ul.process-list > li::after {
 .video-card figure.fullscreen {
   padding-bottom: 75.2% !important;
 }
+
+#back2top {
+  font-size: 1em;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transition: opacity 0.5s;
+}
+
+#back2top.hidden {
+  opacity: 0;
+}
